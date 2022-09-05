@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="shortcut icon" href="/" type="image/x-icon" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="./index.js"></script>
+  </head>
+  <body>
+    <section>
+      <h3>Productos</h3>
+      <form id="productForm">
+        <input type="text" name="nombre" placeholder="Nombre" />
+        <input type="text" name="descripcion" placeholder="Descripcion" />
+        <input type="text" name="codigo" placeholder="Codigo" />
+        <input type="text" name="foto" placeholder="Foto" />
+        <input type="number" name="precio" min="1" placeholder="Precio" />
+        <input type="number" name="stock" min="0" placeholder="Stock" />
+        <button>Agregar producto</button>
+      </form>
+      <ul id="productList" class="product-list"></ul>
+    </section>
+    <section>
+      <h3>Carrito</h3>
+      <ul id="cart" class="cart"></ul>
+    </section>
+  </body>
+</html>
