@@ -1,0 +1,32 @@
+[
+  {
+    "id": "5",
+    "timestamp": "2022-09-05T00:40:28.609Z",
+    "nombre": "Alimento Gati Recetas Caseras para gato adulto sabor pescado, arroz y espinaca en bolsa de 15 kg Nuevo",
+    "descripcion": "",
+    "codigo": "1234",
+    "foto": "https://http2.mlstatic.com/D_NQ_NP_721194-MLA47774933442_102021-O.webp",
+    "precio": "4900",
+    "stock": "3000"
+  },
+  {
+    "id": "6",
+    "timestamp": "2022-09-05T00:47:21.147Z",
+    "nombre": "Alcatel 1 Plus 16 GB negro 1 GB RAM",
+    "descripcion": "aaa",
+    "codigo": "4321",
+    "foto": "https://http2.mlstatic.com/D_NQ_NP_833310-MLA49537292456_032022-O.webp",
+    "precio": "17815",
+    "stock": "7657"
+  },
+  {
+    "id": "7",
+    "timestamp": "2022-09-05T01:54:06.854Z",
+    "nombre": "Bicicleta Mtb Overtech Q8 R29 Aluminio Ltwoo Freno A Disco",
+    "descripcion": "aaa",
+    "codigo": "2345",
+    "foto": "https://http2.mlstatic.com/D_NQ_NP_862462-MLA49952059793_052022-O.webp",
+    "precio": "47399",
+    "stock": "124"
+  }
+]
