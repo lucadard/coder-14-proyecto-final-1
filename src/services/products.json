@@ -1,32 +1,52 @@
 [
   {
-    "id": "5",
+    "id": 1,
     "timestamp": "2022-09-05T00:40:28.609Z",
     "nombre": "Alimento Gati Recetas Caseras para gato adulto sabor pescado, arroz y espinaca en bolsa de 15 kg Nuevo",
     "descripcion": "",
     "codigo": "1234",
     "foto": "https://http2.mlstatic.com/D_NQ_NP_721194-MLA47774933442_102021-O.webp",
-    "precio": "4900",
-    "stock": "3000"
+    "precio": 4900,
+    "stock": 3000
   },
   {
-    "id": "6",
+    "id": 2,
     "timestamp": "2022-09-05T00:47:21.147Z",
     "nombre": "Alcatel 1 Plus 16 GB negro 1 GB RAM",
     "descripcion": "aaa",
     "codigo": "4321",
     "foto": "https://http2.mlstatic.com/D_NQ_NP_833310-MLA49537292456_032022-O.webp",
-    "precio": "17815",
-    "stock": "7657"
+    "precio": 17815,
+    "stock": 7657
   },
   {
-    "id": "7",
+    "id": 3,
     "timestamp": "2022-09-05T01:54:06.854Z",
     "nombre": "Bicicleta Mtb Overtech Q8 R29 Aluminio Ltwoo Freno A Disco",
     "descripcion": "aaa",
     "codigo": "2345",
     "foto": "https://http2.mlstatic.com/D_NQ_NP_862462-MLA49952059793_052022-O.webp",
-    "precio": "47399",
-    "stock": "124"
+    "precio": 47399,
+    "stock": 124
+  },
+  {
+    "id": 4,
+    "timestamp": "2022-09-05T22:12:14.452Z",
+    "nombre": "Energizer Recharge NH15-2000 AA Cilíndrica",
+    "descripcion": "aaa",
+    "codigo": "2121",
+    "foto": "https://http2.mlstatic.com/D_NQ_NP_2X_992703-MLA46194287474_052021-F.webp",
+    "precio": 1490,
+    "stock": 38700
+  },
+  {
+    "id": 5,
+    "timestamp": "2022-09-05T23:11:33.959Z",
+    "nombre": "Silla de escritorio DeSillas Darwin ergonómica negra con tapizado de mesh",
+    "descripcion": "aaa",
+    "codigo": "1243",
+    "foto": "https://http2.mlstatic.com/D_NQ_NP_2X_786606-MLA43801478757_102020-F.webp",
+    "precio": 24853,
+    "stock": 3615
   }
 ]
