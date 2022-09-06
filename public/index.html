@@ -7,11 +7,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="style.css" />
-    <script defer src="./index.js"></script>
+    <script>
+      let ADMIN = false
+      const cartId = '1'
+    </script>
+    <script defer src="./scripts/products.js"></script>
+    <script defer src="./scripts/cart.js"></script>
   </head>
   <body>
+    <div id="admin"></div>
     <section>
-      <h3>Productos</h3>
+      <h3>Agregar un producto</h3>
       <form id="productForm">
         <input type="text" name="nombre" placeholder="Nombre" />
         <input type="text" name="descripcion" placeholder="Descripcion" />
@@ -21,6 +27,9 @@
         <input type="number" name="stock" min="0" placeholder="Stock" />
         <button>Agregar producto</button>
       </form>
+    </section>
+    <section>
+      <h3>Productos</h3>
       <ul id="productList" class="product-list"></ul>
     </section>
     <section>

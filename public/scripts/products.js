@@ -1,6 +1,3 @@
-const ADMIN = true
-const cartId = '1'
-
 //PRODUCTOS
 const productForm = document.getElementById('productForm')
 const productList = document.getElementById('productList')
@@ -52,7 +49,9 @@ function generateProductHTML(product) {
       <div class="stock-details">
         <p class="price">$${product.precio}</p>
       </div>
-      <span class="add-product-btn" onclick="addProductToCart(${product.id})">Añadir</span>
+      <span class="add-product-btn" onclick="addProductToCart(${
+        product.id
+      })">Añadir</span>
       <div class="admin-actions ${ADMIN ? '' : 'disable'}">
         <button onclick="updateProduct(${product.id})">Actualizar</button>
         <button onclick="deleteProduct(${product.id})">Eliminar</button>
@@ -95,60 +94,20 @@ function addProductToCart(id) {
     return res
   })()
 }
-function deleteProductFromCart(id) {
+function deleteProductFromCart(id, deleteAll = true) {
   ;(async () => {
-    const post = await fetch(`/api/carrito/${cartId}/productos/${id}`, {
-      method: 'DELETE',
-      headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json'
+    const post = await fetch(
+      `/api/carrito/${cartId}/productos/${id}?deleteAll=${deleteAll}`,
+      {
+        method: 'DELETE',
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json'
+        }
       }
-    })
+    )
     const res = await post.json()
     location.reload()
     return res
   })()
-}
-
-//CARRITO
-const cart = document.getElementById('cart')
-
-// const createCart = async () => {
-//   const post = await fetch(`/api/carrito`, {
-//     method: 'POST',
-//     headers: {
-//       Accept: 'application/json',
-//       'Content-Type': 'application/json'
-//     }
-//   })
-//   const { id } = await post.json()
-//   console.log(id)
-//   return id
-// }
-
-const getCart = async () => {
-  const res = await fetch(`/api/carrito/${cartId}/productos`)
-  const data = res.json()
-  return data
-}
-
-getCart().then(({ products }) => {
-  if (products.length)
-    for (let product of products)
-      cart.innerHTML += generateCartItemHTML(product)
-  else cart.innerHTML = '<p>No hay productos que mostrar.</p>'
-})
-
-function generateCartItemHTML(product) {
-  return `<li class="product-card">
-    <div class="product-upper">
-        <span class="code">#${product.codigo}</span>
-        <h4 class="name">${product.nombre}</h4>
-        <img class="image" src="${product.foto}" alt="foto de ${product.nombre}"/>
-    </div>
-    <p class="price">$${product.precio}</p>
-    <div class="actions">
-      <button onclick="deleteProductFromCart(${product.id})">Eliminar</button>
-    </div>
-    </li>`
 }
