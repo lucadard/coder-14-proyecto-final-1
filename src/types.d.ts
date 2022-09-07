@@ -9,6 +9,8 @@ export interface Product {
   stock: number
 }
 
+export type newProductData = Omit<Product, 'id' | 'timestamp'>
+
 export interface Cart {
   id: number
   timestamp: string
