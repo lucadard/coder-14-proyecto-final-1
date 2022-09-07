@@ -6,11 +6,11 @@ export class Contenedor<T> {
     this.fs = require('fs')
   }
 
-  async readFile(): Promise<T[] | undefined> {
+  async readFile(): Promise<T[]> {
     try {
       return JSON.parse(await this.fs.promises.readFile(this.ruta, 'utf-8'))
     } catch (err) {
-      console.error('Error al leer el archivo.', err)
+      throw new Error('Error al leer el archivo.')
     }
   }
 
@@ -22,7 +22,7 @@ export class Contenedor<T> {
         'utf-8'
       )
     } catch (err) {
-      console.error('Error al escribir en el archivo.', err)
+      throw new Error('Error al escribir en el archivo.')
     }
   }
 

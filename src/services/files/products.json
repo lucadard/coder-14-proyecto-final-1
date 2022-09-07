@@ -10,16 +10,6 @@
     "stock": 3000
   },
   {
-    "id": 2,
-    "timestamp": "2022-09-05T00:47:21.147Z",
-    "nombre": "Alcatel 1 Plus 16 GB negro 1 GB RAM",
-    "descripcion": "aaa",
-    "codigo": "4321",
-    "foto": "https://http2.mlstatic.com/D_NQ_NP_833310-MLA49537292456_032022-O.webp",
-    "precio": 17815,
-    "stock": 7657
-  },
-  {
     "id": 3,
     "timestamp": "2022-09-05T01:54:06.854Z",
     "nombre": "Bicicleta Mtb Overtech Q8 R29 Aluminio Ltwoo Freno A Disco",
