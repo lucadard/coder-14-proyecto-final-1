@@ -1,15 +1,5 @@
 [
   {
-    "id": 1,
-    "timestamp": "2022-09-05T00:40:28.609Z",
-    "nombre": "Alimento Gati Recetas Caseras para gato adulto sabor pescado, arroz y espinaca en bolsa de 15 kg Nuevo",
-    "descripcion": "",
-    "codigo": "1234",
-    "foto": "https://http2.mlstatic.com/D_NQ_NP_721194-MLA47774933442_102021-O.webp",
-    "precio": "4899",
-    "stock": 3000
-  },
-  {
     "id": 3,
     "timestamp": "2022-09-05T01:54:06.854Z",
     "nombre": "Bicicleta Mtb Overtech Q8 R29 Aluminio Ltwoo Freno A Disco",
@@ -22,7 +12,7 @@
   {
     "id": 4,
     "timestamp": "2022-09-05T22:12:14.452Z",
-    "nombre": "Energizer Recharge NH15-2000 AA Cilíndrica",
+    "nombre": "Energizer Recharge NH15-2000 AA ",
     "descripcion": "aaa",
     "codigo": "2121",
     "foto": "https://http2.mlstatic.com/D_NQ_NP_2X_992703-MLA46194287474_052021-F.webp",
@@ -38,5 +28,25 @@
     "foto": "https://http2.mlstatic.com/D_NQ_NP_2X_786606-MLA43801478757_102020-F.webp",
     "precio": 24853,
     "stock": 3615
+  },
+  {
+    "id": 6,
+    "timestamp": "Wed Sep 07 2022 21:41:29 GMT-0300 (Argentina Standard Time)",
+    "nombre": "Notebook Lenovo Ideapad Flex 5 Amd R5 8gb 256gb Ssd 14 Touch",
+    "descripcion": "aaa",
+    "codigo": "3131",
+    "foto": "https://http2.mlstatic.com/D_NQ_NP_2X_798868-MLA51374922180_092022-F.webp",
+    "precio": "160999",
+    "stock": "1234"
+  },
+  {
+    "id": 7,
+    "timestamp": "Wed Sep 07 2022 21:43:45 GMT-0300 (Argentina Standard Time)",
+    "nombre": "Zapatillas Energyfalcon adidas",
+    "descripcion": "aaa",
+    "codigo": "4343",
+    "foto": "https://http2.mlstatic.com/D_NQ_NP_2X_916358-MLA48394262404_112021-F.webp",
+    "precio": "19799",
+    "stock": "79"
   }
 ]
