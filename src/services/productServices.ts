@@ -32,18 +32,26 @@ export const addProduct = (newProductData: newProductData) => {
   return newProduct
 }
 
-export const updateProduct = (id: number, props: any): Product | undefined => {
+export const updateProduct = (
+  id: number,
+  props: Product
+): Product | undefined => {
   let product = products.find((p) => p.id === id)
   if (!product) return undefined
-  product = {
-    ...product,
-    nombre: props.nombre || product.nombre,
-    descripcion: props.descripcion || product.descripcion,
-    codigo: props.codigo || product.codigo,
-    foto: props.foto || product.foto,
-    precio: props.precio || product.precio,
-    stock: props.stock || product.stock
-  }
+  products = products.map((p) => {
+    if (p.id === id) {
+      return {
+        ...p,
+        nombre: props.nombre || p.nombre,
+        descripcion: props.descripcion || p.descripcion,
+        codigo: props.codigo || p.codigo,
+        foto: props.foto || p.foto,
+        precio: props.precio || p.precio,
+        stock: props.stock || p.stock
+      }
+    }
+    return p
+  })
   updateFile()
   return product
 }

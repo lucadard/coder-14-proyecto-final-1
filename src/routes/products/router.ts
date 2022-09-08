@@ -34,6 +34,7 @@ router.post('/', authCheckMiddleware, (req, res) => {
 router.put('/:id', authCheckMiddleware, (req, res) => {
   const { id } = req.params
   const { body } = req
+
   if (!hasAnyProps(body))
     return res.status(400).send({ error: 'invalid props' })
 
