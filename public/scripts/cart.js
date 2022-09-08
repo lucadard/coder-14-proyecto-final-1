@@ -1,5 +1,8 @@
 //CARRITO
 const cart = document.getElementById('cart')
+const productsCounter = document.getElementById('counter')
+const totalPrice = document.getElementById('price')
+let price = 0
 
 const getCart = async () => {
   const res = await fetch(`/api/carrito/${cartId}/productos`)
@@ -8,10 +11,15 @@ const getCart = async () => {
 }
 
 getCart().then(({ products }) => {
-  if (products.length)
-    for (let product of products)
+  if (products.length) {
+    console.log(products.length)
+    productsCounter.innerHTML = +products.length
+    for (let product of products) {
       cart.innerHTML += generateCartItemHTML(product)
-  else cart.innerHTML = '<p>No hay productos que mostrar.</p>'
+      price += +product.producto.precio * +product.cantidad
+      totalPrice.innerHTML = price
+    }
+  } else cart.innerHTML = '<p>No hay productos que mostrar.</p>'
 })
 
 function deleteProductFromCart(id, deleteAll = true) {
