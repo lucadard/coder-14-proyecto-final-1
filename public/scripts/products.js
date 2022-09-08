@@ -9,6 +9,7 @@ productForm.addEventListener('submit', (event) => {
   inputArray.map((input) => {
     form[input.name] = input.value
   })
+  if (!ADMIN) alert('no sos admin, cambialo desde el tag scripts en index.html')
   ADMIN &&
     (async () => {
       const post = await fetch(`/api/productos/?admin=${ADMIN}`, {
@@ -21,6 +22,7 @@ productForm.addEventListener('submit', (event) => {
       })
       const res = await post.json()
       location.reload()
+      return res
     })()
 })
 
@@ -36,33 +38,6 @@ getProducts().then(({ products }) => {
       productList.innerHTML += generateProductHTML(product)
   else productList.innerHTML = '<p>No hay productos que mostrar.</p>'
 })
-
-function generateProductHTML(product) {
-  return `
-  <li class="product-card">
-    <div class="image">
-      <img src="${product.foto}" alt="foto de ${product.nombre}"/>
-    </div>
-    <div class="card-details">
-      <span class="code">#${product.codigo}</span>
-      <h2 class="name">${product.nombre}</h2>
-      <div class="stock-details">
-        <p class="price">$${product.precio}</p>
-      </div>
-      <span class="add-product-btn" onclick="addProductToCart(${
-        product.id
-      })">Añadir</span>
-      <div class="admin-actions ${ADMIN ? '' : 'disable'}">
-        <button onclick="updateProduct(${product.id})">Actualizar</button>
-        <button onclick="deleteProduct(${product.id})">Eliminar</button>
-      </div>
-    </div>
-  </li>`
-}
-
-function updateProduct(id) {
-  console.log('update' + id)
-}
 
 function deleteProduct(id) {
   ADMIN &&
@@ -94,20 +69,28 @@ function addProductToCart(id) {
     return res
   })()
 }
-function deleteProductFromCart(id, deleteAll = true) {
-  ;(async () => {
-    const post = await fetch(
-      `/api/carrito/${cartId}/productos/${id}?deleteAll=${deleteAll}`,
-      {
-        method: 'DELETE',
-        headers: {
-          Accept: 'application/json',
-          'Content-Type': 'application/json'
-        }
-      }
-    )
-    const res = await post.json()
-    location.reload()
-    return res
-  })()
+
+function generateProductHTML(product) {
+  return `
+  <li class="product-card">
+    <div class="image">
+      <img src="${product.foto}" alt="foto de ${product.nombre}"/>
+    </div>
+    <div class="card-details">
+      <span class="code">#${product.codigo}</span>
+      <h2 class="name">${product.nombre}</h2>
+      <div class="stock-details">
+        <p class="price">$${product.precio}</p>
+      </div>
+      <span class="add-product-btn" onclick="addProductToCart(${
+        product.id
+      })">Añadir</span>
+      <div class="admin-actions ${ADMIN ? '' : 'disable'}">
+        <a href="/pages/updateForm.html?id=${product.id}">
+          <button>Actualizar</button>
+        </a>
+        <button onclick="deleteProduct(${product.id})">Eliminar</button>
+      </div>
+    </div>
+  </li>`
 }

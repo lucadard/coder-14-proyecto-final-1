@@ -5,20 +5,19 @@
     <link rel="shortcut icon" href="/" type="image/x-icon" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Products & Cart</title>
-    <link rel="stylesheet" href="style.css" />
+    <title>Update Product</title>
+    <link rel="stylesheet" href="../style.css" />
     <script>
       let ADMIN = true
       const cartId = '1'
     </script>
-    <script defer src="./scripts/products.js"></script>
-    <script defer src="./scripts/cart.js"></script>
+    <script defer src="../scripts/updateProduct.js"></script>
   </head>
   <body>
     <div id="admin"></div>
     <section>
-      <h3>Agregar un producto</h3>
-      <form id="productForm">
+      <h3>Editar un producto</h3>
+      <form id="productUpdateForm">
         <input type="text" name="nombre" placeholder="Nombre" />
         <input type="text" name="descripcion" placeholder="Descripcion" />
         <input type="text" name="codigo" placeholder="Codigo" />
@@ -27,14 +26,6 @@
         <input type="number" name="stock" min="0" placeholder="Stock" />
         <button>Enviar</button>
       </form>
-    </section>
-    <section>
-      <h3>Productos</h3>
-      <ul id="productList" class="product-list"></ul>
-    </section>
-    <section>
-      <h3>Carrito</h3>
-      <ul id="cart" class="cart"></ul>
     </section>
   </body>
 </html>

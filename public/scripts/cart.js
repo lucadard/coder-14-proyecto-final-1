@@ -1,18 +1,6 @@
 //CARRITO
 const cart = document.getElementById('cart')
 
-// const createCart = async () => {
-//   const post = await fetch(`/api/carrito`, {
-//     method: 'POST',
-//     headers: {
-//       Accept: 'application/json',
-//       'Content-Type': 'application/json'
-//     }
-//   })
-//   const { id } = await post.json()
-//   return id
-// }
-
 const getCart = async () => {
   const res = await fetch(`/api/carrito/${cartId}/productos`)
   const data = res.json()
@@ -25,6 +13,24 @@ getCart().then(({ products }) => {
       cart.innerHTML += generateCartItemHTML(product)
   else cart.innerHTML = '<p>No hay productos que mostrar.</p>'
 })
+
+function deleteProductFromCart(id, deleteAll = true) {
+  ;(async () => {
+    const post = await fetch(
+      `/api/carrito/${cartId}/productos/${id}?deleteAll=${deleteAll}`,
+      {
+        method: 'DELETE',
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json'
+        }
+      }
+    )
+    const res = await post.json()
+    location.reload()
+    return res
+  })()
+}
 
 function generateCartItemHTML({ producto, cantidad }) {
   return `
