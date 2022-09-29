@@ -12,7 +12,7 @@ productForm.addEventListener('submit', (event) => {
   if (!ADMIN) alert('no sos admin, cambialo desde el tag scripts en index.html')
   ADMIN &&
     (async () => {
-      const post = await fetch(`/api/productos/?admin=${ADMIN}`, {
+      const post = await fetch(`/api/products/?admin=${ADMIN}`, {
         method: 'POST',
         headers: {
           Accept: 'application/json',
@@ -27,7 +27,7 @@ productForm.addEventListener('submit', (event) => {
 })
 
 const getProducts = async () => {
-  const res = await fetch(`/api/productos?admin=${ADMIN}`)
+  const res = await fetch(`/api/products?admin=${ADMIN}`)
   const data = res.json()
   return data
 }
@@ -42,7 +42,7 @@ getProducts().then(({ products }) => {
 function deleteProduct(id) {
   ADMIN &&
     (async () => {
-      const post = await fetch(`/api/productos/${id}?admin=${ADMIN}`, {
+      const post = await fetch(`/api/products/${id}?admin=${ADMIN}`, {
         method: 'DELETE',
         headers: {
           Accept: 'application/json',
@@ -57,7 +57,7 @@ function deleteProduct(id) {
 
 function addProductToCart(id) {
   ;(async () => {
-    const post = await fetch(`/api/carrito/${cartId}/productos/${id}`, {
+    const post = await fetch(`/api/carts/${cartId}/products/${id}`, {
       method: 'POST',
       headers: {
         Accept: 'application/json',
@@ -74,13 +74,13 @@ function generateProductHTML(product) {
   return `
   <li class="product-card">
     <div class="image">
-      <img src="${product.foto}" alt="foto de ${product.nombre}"/>
+      <img src="${product.photo_url}" alt="foto de ${product.name}"/>
     </div>
     <div class="card-details">
-      <span class="code">#${product.codigo}</span>
-      <h2 class="name">${product.nombre}</h2>
+      <span class="code">#${product.code}</span>
+      <h2 class="name">${product.name}</h2>
       <div class="stock-details">
-        <p class="price">$${product.precio}</p>
+        <p class="price">$${product.price}</p>
       </div>
       <span class="add-product-btn" onclick="addProductToCart(${
         product.id

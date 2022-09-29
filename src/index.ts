@@ -1,7 +1,7 @@
 import express from 'express'
 
 import { router as productsRouter } from './routes/products/router'
-import { router as cartRouter } from './routes/cart/router'
+import { router as cartsRouter } from './routes/carts/router'
 
 const app = express()
 
@@ -9,8 +9,8 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 app.use('/', express.static('./public'))
 
-app.use('/api/productos', productsRouter)
-app.use('/api/carrito', cartRouter)
+app.use('/api/products', productsRouter)
+app.use('/api/carts', cartsRouter)
 
 app.get('/', (_, res) => {
   res.render('index')

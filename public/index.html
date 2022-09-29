@@ -19,11 +19,11 @@
     <section>
       <h3>Agregar un producto</h3>
       <form id="productForm">
-        <input type="text" name="nombre" placeholder="Nombre" />
-        <input type="text" name="descripcion" placeholder="Descripcion" />
-        <input type="text" name="codigo" placeholder="Codigo" />
-        <input type="text" name="foto" placeholder="Foto" />
-        <input type="number" name="precio" min="1" placeholder="Precio" />
+        <input type="text" name="name" placeholder="Nombre" />
+        <input type="text" name="description" placeholder="Descripcion" />
+        <input type="text" name="code" placeholder="Codigo" />
+        <input type="text" name="photo_url" placeholder="Foto" />
+        <input type="number" name="price" min="1" placeholder="Precio" />
         <input type="number" name="stock" min="0" placeholder="Stock" />
         <button>Enviar</button>
       </form>
@@ -36,6 +36,7 @@
       <h3>Carrito (<span id="counter">0</span>)</h3>
       <ul id="cart" class="cart"></ul>
       <p class="price">Total: $<span id="price"></span></p>
+      <button onclick="emptyCart(cartId)">Vaciar carrito</button>
     </section>
   </body>
 </html>

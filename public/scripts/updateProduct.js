@@ -11,7 +11,7 @@ productUpdateForm.addEventListener('submit', (event) => {
   })
   ADMIN &&
     (async () => {
-      const post = await fetch(`/api/productos/${id}?admin=${ADMIN}`, {
+      const post = await fetch(`/api/products/${id}?admin=${ADMIN}`, {
         method: 'PUT',
         headers: {
           Accept: 'application/json',
