@@ -1,0 +1,32 @@
+[
+  {
+    "name": "hola",
+    "description": "hola",
+    "code": "1",
+    "photo_url": "",
+    "price": "1",
+    "stock": "1",
+    "id": 1,
+    "timestamp": 1664222132558
+  },
+  {
+    "name": "chau",
+    "description": "1",
+    "code": "1",
+    "photo_url": "1",
+    "price": "1",
+    "stock": "1",
+    "id": 2,
+    "timestamp": 1664222138241
+  },
+  {
+    "name": "que tal ",
+    "description": "1",
+    "code": "1",
+    "photo_url": "1",
+    "price": "1",
+    "stock": "1",
+    "id": 3,
+    "timestamp": 1664222144490
+  }
+]
