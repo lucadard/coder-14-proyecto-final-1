@@ -9,7 +9,8 @@ export default class ContenedorMemoriaDB<T> {
   }
 
   findById = (id: number) => {
-    return this.data.find((d: any) => d.id === id)
+    const itemIndex = this.data.findIndex((d: any) => d.id === id)
+    return this.data[itemIndex]
   }
 
   addOne = (item: any) => {

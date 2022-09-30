@@ -1,9 +1,6 @@
 import express from 'express'
 
-import {
-  cartDAOMongoDB as cartDAO,
-  productDAOMongoDB as productDAO
-} from '../../services'
+import { cartDAO, productDAO } from '../../index'
 
 export const router = express.Router()
 

@@ -18,3 +18,5 @@ export interface Cart {
     amount: number
   }[]
 }
+
+export type DAOType = 'archivo' | 'memoria' | 'mongodb' | 'firebase'

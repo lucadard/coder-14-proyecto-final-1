@@ -1,6 +1,7 @@
 import express from 'express'
 
-import { productDAOMongoDB as productDAO } from '../../services'
+import { productDAO } from '../../index'
+
 // import { hasAllProps, hasAnyProps } from './lib/validation'
 import { authCheckMiddleware } from '../../middleware/authorize'
 

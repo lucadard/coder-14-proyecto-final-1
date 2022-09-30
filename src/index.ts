@@ -1,5 +1,11 @@
 import express from 'express'
 
+import { DAOType } from './types'
+import { exportedDAOs } from './services'
+export const { cartDAO, productDAO } = exportedDAOs(
+  (process.env.SELECTED_DAO as DAOType) || 'memoria'
+)
+
 import { router as productsRouter } from './routes/products/router'
 import { router as cartsRouter } from './routes/carts/router'
 

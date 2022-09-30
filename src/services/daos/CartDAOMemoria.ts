@@ -7,11 +7,6 @@ export default class CartDAO extends ContenedorMemoria<Cart> {
     super()
   }
 
-  findProductsById = (id: number) => {
-    let cartProducts = this.findById(id)?.products
-    return { products: cartProducts }
-  }
-
   hasProduct = (id: number, product_id: number): number => {
     const cart = this.findById(id)
     if (!cart) return -1

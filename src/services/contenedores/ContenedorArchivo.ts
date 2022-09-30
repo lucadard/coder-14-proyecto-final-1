@@ -51,7 +51,6 @@ export default class ContenedorArchivo<T> {
     let updatedItemIndex = data.findIndex((d: any) => d.id === id)
     if (updatedItemIndex === -1) return
     data[updatedItemIndex] = { ...data[updatedItemIndex], ...itemData }
-    console.log(data)
     await this.save(data)
 
     return data[updatedItemIndex]
