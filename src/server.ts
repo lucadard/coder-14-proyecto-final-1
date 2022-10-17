@@ -39,7 +39,7 @@ app.engine(
 
 app.get('/', async (req, res) => {
   const products = (await productDAO.getAll()) || []
-  res.render('index', { user: req.user, products })
+  res.render('index', { user: req.user, products, title: 'Inicio' })
 })
 
 app.use('/api/products', productsRouter)

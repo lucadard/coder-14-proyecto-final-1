@@ -5,6 +5,7 @@ import { productDAO } from '../../server'
 // import { hasAllProps, hasAnyProps } from './lib/validation'
 import { authorization } from '../../middlewares/authorization'
 import { adminAuthorization } from '../../middlewares/adminAuthorization'
+import { Product } from '../../types'
 
 export const router = Router()
 
@@ -14,13 +15,20 @@ router.get('/', async (req, res) => {
 })
 
 router.get('/add', adminAuthorization, async (req, res) => {
-  return res.render('add-product', { user: req.user })
+  return res.render('add-product', {
+    user: req.user,
+    title: 'Agregar producto'
+  })
 })
 
 router.get('/update', adminAuthorization, async (req, res) => {
   let { id } = req.query
-  const product = await productDAO.findById(id)
-  return res.render('edit-product', { user: req.user, product })
+  const product: Product = await productDAO.findById(id)
+  return res.render('edit-product', {
+    user: req.user,
+    product,
+    title: `Editar ${product.name}`
+  })
 })
 
 router.get('/:id', authorization, async (req, res) => {

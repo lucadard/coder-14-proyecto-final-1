@@ -26,7 +26,7 @@
                 <p class="stock">{{product_data.stock}} disponible(s)</p>
                 </div>
                 <div class="price">
-                <p>${{product_data.price}} c/u</p>
+                <p>${{product_data.cost}}</p>
                 </div>
             </li>
         {{/each}}
@@ -37,7 +37,7 @@
         {{/if}}
         </ul>
         {{#if cartProducts.length}}
-            <p class="price">Total: $<span id="price"></span></p>
+            <p class="price">Total: ${{price}}<span id="price"></span></p>
             <button onclick=emptyCart('{{user.id}}')>Vaciar carrito</button>
         {{/if}}
     </section>

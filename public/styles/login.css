@@ -4,7 +4,6 @@ body {
 }
 
 main {
-  margin: 0;
   display: flex;
   justify-content: center;
 }
@@ -62,4 +61,9 @@ button {
 .register-btn,
 .login-btn {
   text-align: center;
+}
+
+.note {
+  color: rgba(0, 0, 0, 0.8);
+  font-size: 14px;
 }

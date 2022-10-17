@@ -1,7 +1,9 @@
 <script defer src="/static/scripts/products.js"></script>
 {{> navbar}}
 <main>
+  {{#if user.admin}}
   <p> <a href="/api/products/add">Agrega un producto</a></p>
+  {{/if}}
   <section>
       <h3>Productos</h3>
       <ul id="productList" class="product-list">
@@ -14,6 +16,7 @@
               <div class="card-details">
                 <span class="code">#{{code}}</span>
                 <h2 class="name">{{name}}</h2>
+                <span>{{description}}</span>
                 <div class="stock-details">
                   <p class="price">${{price}}</p>
                 </div>

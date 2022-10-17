@@ -12,7 +12,7 @@ async function deleteProduct(id) {
 }
 
 async function addProductToCart(id, userId) {
-  if (userId === '') return console.log('not logged')
+  if (userId === '') return location.assign('/auth/login')
   const res = await fetch(`/api/carts/${userId}/products/${id}`, {
     method: 'POST',
     headers: {

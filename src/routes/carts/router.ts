@@ -16,13 +16,23 @@ router.get('/:id/products', async (req, res) => {
 
 router.get('/', authorization, async (req, res) => {
   let cartProducts: any = []
+  let price = 0
   if (req.user) {
-    cartProducts = await cartDAO.getCartProductsByUserId(req.user.id)
+    const { products, totalPrice } = await cartDAO.getProductsDetailsByUserId(
+      req.user.id
+    )
+    cartProducts = products
+    price = totalPrice
   }
-  res.render('cart', { user: req.user, cartProducts })
+  res.render('cart', {
+    user: req.user,
+    cartProducts,
+    price,
+    title: 'Carrito'
+  })
 })
 
-router.post('/', authorization, async (req, res) => {
+router.post('/', adminAuthorization, async (req, res) => {
   const { body } = req
   const newCart = await cartDAO.addOne({
     ...body,
@@ -38,7 +48,7 @@ router.post('/:id_user/products/:id_prod', authorization, async (req, res) => {
   const { id_user, id_prod } = req.params
   const product = await productDAO.findById(id_prod)
   if (!product) return res.status(404).send({ error: 'product not found' })
-  const updatedCart: any = await cartDAO.addProduct(id_user, product)
+  const updatedCart: any = await cartDAO.addProduct(id_user, product.id)
   return updatedCart
     ? res.status(200).send({ data: updatedCart })
     : res.status(404).send({ error: 'cart not found' })

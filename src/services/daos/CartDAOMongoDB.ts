@@ -26,15 +26,19 @@ export default class CartDAO extends ContenedorMongoDB<Cart> {
       : -1
   }
 
-  addProduct = async (userId: string, product: any) => {
+  addProduct = async (userId: string, product_id: string) => {
     const cart = await this.findByUserId(userId)
     if (!cart) return undefined
 
-    const productIndex = await this.hasProduct(cart.id, product.id)
+    const productCartIndex = await this.hasProduct(cart.id, product_id)
 
-    if (productIndex === -1)
-      cart.products.push({ product_id: product.id, amount: 1 })
-    else cart.products[productIndex].amount++
+    if (productCartIndex === -1) cart.products.push({ product_id, amount: 1 })
+    else {
+      const product: Product = await productDAO.findById(product_id)
+      if (cart.products[productCartIndex].amount >= product.stock)
+        cart.products[productCartIndex].amount = product.stock
+      else cart.products[productCartIndex].amount++
+    }
 
     await this.updateById(cart.id, cart)
     return cart
@@ -66,15 +70,29 @@ export default class CartDAO extends ContenedorMongoDB<Cart> {
     return cart
   }
 
-  getCartProductsByUserId = async (user_id: string) => {
-    const cartProducts: { product_data: Product; amount: number }[] = []
+  getProductsDetailsByUserId = async (
+    user_id: string
+  ): Promise<{
+    products: { product_data: Product; amount: number }[]
+    totalPrice: number
+  }> => {
+    let totalPrice = 0
+    const cartProducts: {
+      product_data: Product & { cost: number }
+      amount: number
+    }[] = []
     const cart = await this.findByUserId(user_id)
     for (let { product_id, amount } of cart!.products) {
-      const product = await productDAO.findById(product_id)
-      if (product) cartProducts.push({ product_data: product, amount })
-      else this.removeAll(user_id, product_id)
+      const product: Product = await productDAO.findById(product_id)
+      if (product) {
+        cartProducts.push({
+          product_data: { ...product, cost: product.price * amount },
+          amount
+        })
+        totalPrice += product.price * amount
+      } else this.removeAll(user_id, product_id)
     }
-    return cartProducts
+    return { products: cartProducts, totalPrice }
   }
 
   removeAll = async (user_id: string, product_id: string) => {
