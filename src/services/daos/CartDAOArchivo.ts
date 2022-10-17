@@ -1,41 +1,43 @@
 import ContenedorArchivo from '../contenedores/ContenedorArchivo'
 
 import { Cart, Product } from '../../types'
+import { productDAO } from '../../server'
 
 export default class CartDAO extends ContenedorArchivo<Cart> {
   constructor() {
     super('carts.json')
   }
 
-  findProductsById = async (id: number) => {
+  findProductsById = async (id: string) => {
     let cartProducts = await this.findById(id)
     return { products: cartProducts?.products || [] }
   }
 
-  hasProduct = async (id: number, product_id: number): Promise<number> => {
+  hasProduct = async (id: string, product_id: string): Promise<number> => {
     const cart = await this.findById(id)
     if (!cart) return -1
 
     return cart.products.length
-      ? cart?.products.findIndex((p) => p.data.id === product_id)
+      ? cart?.products.findIndex((p) => p.product_id === product_id)
       : -1
   }
 
-  addProduct = async (id: number, product: any) => {
+  addProduct = async (id: string, product: any) => {
     const data = await this.getAll()
     const cart = data?.find((d) => d.id === id)
     if (!cart) return undefined
 
     const productIndex = await this.hasProduct(id, product.id)
 
-    if (productIndex === -1) cart.products.push({ data: product, amount: 1 })
+    if (productIndex === -1)
+      cart.products.push({ product_id: product.id, amount: 1 })
     else cart.products[productIndex].amount++
 
     await this.save(data!)
     return cart
   }
 
-  emptyCart = async (id: number) => {
+  emptyCart = async (id: string) => {
     const data = await this.getAll()
     if (!data) return
     let updatedCartIndex = data?.findIndex((d) => d.id === id)
@@ -46,20 +48,22 @@ export default class CartDAO extends ContenedorArchivo<Cart> {
     return data[updatedCartIndex]
   }
 
-  removeAll = async (id: number, product_id: number) => {
+  removeAll = async (id: string, product_id: string) => {
     const data = await this.getAll()
     let cart = data?.find((d) => d.id === id)
     const productIndex = await this.hasProduct(id, product_id)
     if (productIndex === -1 || !cart) return undefined
 
-    const deletedProduct: Product = cart.products[productIndex].data
+    const deletedProduct: Product = await productDAO.findById(
+      cart.products[productIndex].product_id
+    )
     cart.products.splice(productIndex, 1)
 
     await this.save(data!)
     return deletedProduct
   }
 
-  removeSingle = async (id: number, product_id: number) => {
+  removeSingle = async (id: string, product_id: string) => {
     const data = await this.getAll()
     let cart = data?.find((d) => d.id === id)
     const productIndex = await this.hasProduct(id, product_id)

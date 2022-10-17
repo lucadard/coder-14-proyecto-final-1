@@ -26,7 +26,7 @@ export default class ContenedorArchivo<T> {
     }
   }
 
-  findById = async (id: number) => {
+  findById = async (id: string) => {
     const data = await this.getAll()
     if (!data) return
     return data?.find((d: any) => d.id === id)
@@ -45,7 +45,7 @@ export default class ContenedorArchivo<T> {
     return item
   }
 
-  updateById = async (id: number, itemData: any) => {
+  updateById = async (id: string, itemData: any) => {
     const data = await this.getAll()
     if (!data) return
     let updatedItemIndex = data.findIndex((d: any) => d.id === id)
@@ -56,7 +56,7 @@ export default class ContenedorArchivo<T> {
     return data[updatedItemIndex]
   }
 
-  deleteOne = async (id: number) => {
+  deleteOne = async (id: string) => {
     let data = await this.getAll()
     if (!data) return
     let deletedItem

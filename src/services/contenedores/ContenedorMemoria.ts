@@ -8,7 +8,7 @@ export default class ContenedorMemoriaDB<T> {
     return this.data
   }
 
-  findById = (id: number) => {
+  findById = (id: string) => {
     const itemIndex = this.data.findIndex((d: any) => d.id === id)
     return this.data[itemIndex]
   }
@@ -22,13 +22,13 @@ export default class ContenedorMemoriaDB<T> {
     return item
   }
 
-  updateById = (id: number, data: any) => {
+  updateById = (id: string, data: any) => {
     let updatedItemIndex = this.data.findIndex((d: any) => d.id === id)
     this.data[updatedItemIndex] = { ...this.data[updatedItemIndex], ...data }
     return this.data[updatedItemIndex]
   }
 
-  deleteOne = (id: number) => {
+  deleteOne = (id: string) => {
     let deletedItem
     this.data = this.data.filter((d: any) => {
       if (d.id !== id) {

@@ -1,6 +1,7 @@
-import mongoose, { Schema } from 'mongoose'
+import mongoose, { Schema, Types } from 'mongoose'
 
 import config from '../config'
+import { generateId } from '../lib/generateId'
 
 export default class ContenedorMongoDB<T> {
   protected collection
@@ -17,8 +18,8 @@ export default class ContenedorMongoDB<T> {
     return items
   }
 
-  findById = async (id: number) => {
-    const item = await this.collection
+  findById = async (id: string): Promise<T> => {
+    const item: T = await this.collection
       .findOne({ id })
       .select({ _id: 0, __v: 0 })
       .lean()
@@ -28,21 +29,28 @@ export default class ContenedorMongoDB<T> {
   addOne = async (item: any) => {
     const newItem = new this.collection<T>({
       ...item,
-      id: (await this.count()) + 1,
+      id: generateId(),
       timestamp: +new Date()
     })
-    await newItem.save()
-    return newItem
+    console.log(newItem)
+    try {
+      await newItem.save()
+      return newItem
+    } catch (err: any) {
+      throw new Error(err)
+    }
   }
 
-  updateById = async (id: number, data: any) => {
+  updateById = async (id: string, data: any) => {
+    console.log({ ...data })
+
     const updatedItem = await this.collection.updateOne(
       { id },
       { $set: { ...data } }
     )
     return updatedItem
   }
-  deleteOne = async (id: number) => {
+  deleteOne = async (id: string) => {
     const deletedItem = await this.collection.deleteOne({ id })
     return deletedItem
   }

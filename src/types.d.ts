@@ -1,6 +1,20 @@
+declare global {
+  namespace Express {
+    export interface Request {
+      user?: any
+    }
+  }
+}
+
+export type User = {
+  id: String
+  username: string
+  password: string
+  admin: boolean
+}
 interface Product {
-  id: number
-  code: number
+  id: string
+  code: string
   name: string
   description?: string
   timestamp: number
@@ -11,10 +25,11 @@ interface Product {
 
 export type newProductData = Omit<Product, 'id' | 'timestamp'>
 export interface Cart {
-  id: number
+  id: string
+  user_id: string
   timestamp: number
   products: {
-    data: Product
+    product_id: Product['id']
     amount: number
   }[]
 }

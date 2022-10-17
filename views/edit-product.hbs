@@ -1,0 +1,35 @@
+{{>navbar}}
+<script defer src="/static/scripts/updateProduct.js"></script>
+<main>
+  <a href="/">Atras</a>
+    <section>
+        {{#if product}}
+        <h3>Editar producto</h3>
+            <div class="product-card">
+              <div class="image">
+                <img src={{product.photo_url}} alt='foto de {{product.name}}'/>
+              </div>
+              <div class="card-details">
+                <span class="code">#{{product.code}}</span>
+                <h2 class="name">{{product.name}}</h2>
+                <div class="stock-details">
+                  <p class="price">${{product.price}}</p>
+                </div>
+              </div>
+            </div>
+        <form id="productUpdateForm">
+            <input type="text" name="name" placeholder="Nombre" />
+            <input type="text" name="description" placeholder="Descripcion" />
+            <input type="text" name="code" placeholder="Codigo" />
+            <input type="text" name="photo_url" placeholder="Foto" />
+            <input type="number" name="price" min="1" placeholder="Precio" />
+            <input type="number" name="stock" min="0" placeholder="Stock" />
+            <button>Enviar</button>
+        </form>
+        <p id="errorMsg">Error</p>
+        {{else}}
+        <h3>No se encontro el producto</h3>
+        <a href="/">Volver al inicio</a>
+        {{/if}}
+    </section>
+</main>

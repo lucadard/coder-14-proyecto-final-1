@@ -4,8 +4,8 @@ import ContenedorMongoDB from '../contenedores/ContenedorMongoDB'
 import { Product } from '../../types'
 
 const productSchema = new Schema<Product>({
-  id: { type: Number, required: true },
-  code: { type: Number, required: true },
+  id: { type: String, required: true },
+  code: { type: String, required: true },
   name: { type: String, required: true },
   description: { type: String, required: false },
   timestamp: { type: Number, required: true },
@@ -17,5 +17,16 @@ const productSchema = new Schema<Product>({
 export default class ProductDAO extends ContenedorMongoDB<Product> {
   constructor() {
     super('products', productSchema)
+  }
+
+  updateProduct = async (id: string, newData: any) => {
+    const product = await this.findById(id)
+    console.log(id, product)
+    if (!product) return
+
+    const updatedProduct = { ...product, ...newData }
+
+    await this.updateById(id, updatedProduct)
+    return updatedProduct
   }
 }

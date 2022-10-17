@@ -1,0 +1,18 @@
+{{>navbar}}
+<script defer src="/static/scripts/addProduct.js"></script>
+<main>
+  <a href="/">Atras</a>
+    <section>
+        <h3>Agregar un producto</h3>
+        <form id="productForm">
+            <input type="text" name="name" placeholder="Nombre" />
+            <input type="text" name="description" placeholder="Descripcion" />
+            <input type="text" name="code" placeholder="Codigo" />
+            <input type="text" name="photo_url" placeholder="Foto" />
+            <input type="number" name="price" min="1" placeholder="Precio" />
+            <input type="number" name="stock" min="0" placeholder="Stock" />
+            <button>Enviar</button>
+        </form>
+        <p id="errorMsg">Error</p>
+    </section>
+</main>

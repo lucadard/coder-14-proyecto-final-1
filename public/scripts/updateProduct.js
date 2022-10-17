@@ -1,6 +1,6 @@
-//EDITAR PRODUCTO
 const productUpdateForm = document.getElementById('productUpdateForm')
-const id = location.search.slice(location.search.length - 1)
+const errorMsg = document.getElementById('errorMsg')
+const id = location.search.slice(4)
 
 productUpdateForm.addEventListener('submit', (event) => {
   event.preventDefault()
@@ -9,18 +9,23 @@ productUpdateForm.addEventListener('submit', (event) => {
   inputArray.map((input) => {
     form[input.name] = input.value
   })
-  ADMIN &&
-    (async () => {
-      const post = await fetch(`/api/products/${id}?admin=${ADMIN}`, {
-        method: 'PUT',
-        headers: {
-          Accept: 'application/json',
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(form)
-      })
-      const res = await post.json()
-      window.location.replace('/')
-      return res
-    })()
+  updateProduct(id, form, ({ error, data }) => {
+    if (error) {
+      productUpdateForm.reset()
+      errorMsg.classList.add('show')
+    } else location.reload()
+  })
 })
+
+async function updateProduct(id, newData, callback) {
+  const post = await fetch(`/api/products/${id}`, {
+    method: 'PUT',
+    headers: {
+      Accept: 'application/json',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(newData)
+  })
+  const res = await post.json()
+  return callback(res)
+}

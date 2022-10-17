@@ -2,11 +2,14 @@ import { Schema } from 'mongoose'
 import ContenedorMongoDB from '../contenedores/ContenedorMongoDB'
 
 import { Cart, Product } from '../../types'
+import { productDAO } from '../../server'
+import { userDAO } from '..'
 
 const cartSchema = new Schema<Cart>({
-  id: { type: Number, required: true },
+  id: { type: String, required: true },
+  user_id: { type: String, required: true },
   timestamp: { type: Number, required: true },
-  products: { type: [{ data: {}, amount: Number }], required: true }
+  products: { type: [{ product_id: String, amount: Number }], required: true }
 })
 
 export default class CartDAO extends ContenedorMongoDB<Cart> {
@@ -14,60 +17,94 @@ export default class CartDAO extends ContenedorMongoDB<Cart> {
     super('carts', cartSchema)
   }
 
-  hasProduct = async (id: number, product_id: number): Promise<number> => {
+  hasProduct = async (id: string, product_id: string): Promise<number> => {
     const cart = await this.findById(id)
     if (!cart) return -1
 
     return cart.products.length
-      ? cart?.products.findIndex((p) => p.data.id === product_id)
+      ? cart?.products.findIndex((p) => p.product_id === product_id)
       : -1
   }
 
-  addProduct = async (id: number, product: any) => {
-    const cart = await this.findById(id)
+  addProduct = async (userId: string, product: any) => {
+    const cart = await this.findByUserId(userId)
     if (!cart) return undefined
 
-    const productIndex = await this.hasProduct(id, product.id)
+    const productIndex = await this.hasProduct(cart.id, product.id)
 
-    if (productIndex === -1) cart.products.push({ data: product, amount: 1 })
+    if (productIndex === -1)
+      cart.products.push({ product_id: product.id, amount: 1 })
     else cart.products[productIndex].amount++
 
-    await this.updateById(id, cart)
+    await this.updateById(cart.id, cart)
     return cart
   }
 
-  emptyCart = async (id: number) => {
-    const updatedCart = await this.findById(id)
+  emptyCart = async (user_id: string) => {
+    const updatedCart = await this.findByUserId(user_id)
     if (!updatedCart) return
 
     updatedCart.products = []
 
-    await this.updateById(id, updatedCart)
+    await this.updateById(updatedCart.id, updatedCart)
     return updatedCart
   }
 
-  removeAll = async (id: number, product_id: number) => {
-    let cart = await this.findById(id)
-    const productIndex = await this.hasProduct(id, product_id)
-    if (productIndex === -1 || !cart) return undefined
+  findByUserId = async (user_id: string): Promise<Cart | undefined> => {
+    try {
+      const userExists = Boolean(await userDAO.findById(user_id))
+      if (!userExists) throw new Error('User does not exist')
+    } catch (err) {
+      return undefined
+    }
 
-    const deletedProduct: Product = cart.products[productIndex].data
+    let cart = await this.collection
+      .findOne({ user_id })
+      .select({ _id: 0, __v: 0 })
+      .lean()
+    if (!cart) cart = await this.addOne({ user_id, products: [] })
+    return cart
+  }
+
+  getCartProductsByUserId = async (user_id: string) => {
+    const cartProducts: { product_data: Product; amount: number }[] = []
+    const cart = await this.findByUserId(user_id)
+    for (let { product_id, amount } of cart!.products) {
+      const product = await productDAO.findById(product_id)
+      if (product) cartProducts.push({ product_data: product, amount })
+      else this.removeAll(user_id, product_id)
+    }
+    return cartProducts
+  }
+
+  removeAll = async (user_id: string, product_id: string) => {
+    let cart = await this.findByUserId(user_id)
+
+    if (!cart) return undefined
+    const productIndex = await this.hasProduct(cart.id, product_id)
+    if (productIndex === -1) return undefined
+
+    const deletedProduct: Product = await productDAO.findById(
+      cart.products[productIndex].product_id
+    )
     cart.products.splice(productIndex, 1)
 
-    await this.updateById(id, cart)
+    await this.updateById(cart.id, cart)
     return deletedProduct
   }
 
-  removeSingle = async (id: number, product_id: number) => {
-    let cart = await this.findById(id)
-    const productIndex = await this.hasProduct(id, product_id)
-    if (productIndex === -1 || !cart) return undefined
+  removeSingle = async (user_id: string, product_id: string) => {
+    let cart = await this.findByUserId(user_id)
+
+    if (!cart) return undefined
+    const productIndex = await this.hasProduct(cart.id, product_id)
+    if (productIndex === -1) return undefined
 
     if (cart.products[productIndex].amount > 1)
       cart.products[productIndex].amount--
     else return null
 
-    await this.updateById(id, cart)
+    await this.updateById(cart.id, cart)
     return cart.products[productIndex]
   }
 }

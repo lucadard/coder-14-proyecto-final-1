@@ -1,0 +1,18 @@
+<link rel='stylesheet' href='/static/styles/navbar.css' />
+<section class='navbar'>
+  <nav>
+    <div>
+      <h3><a href='/'>Shop</a></h3>
+    </div>
+    <div class='user'>
+      {{#if user.username}}
+        <span>{{user.username}}</span>
+        <a href='/api/carts'>Carrito{{#if user.cartAmount}}({{user.cartAmount}}){{/if}}</a>
+        <a href='/auth/logout'>Salir</a>
+      {{else}}
+        <a href='/auth/login'>Ingresá</a><br />
+        <a href='/auth/register'>Registrate</a>
+      {{/if}}
+    </div>
+  </nav>
+</section>

@@ -1,50 +1,71 @@
-import express from 'express'
+import { Router } from 'express'
 
-import { productDAO } from '../../index'
+import { productDAO } from '../../server'
 
 // import { hasAllProps, hasAnyProps } from './lib/validation'
-import { authCheckMiddleware } from '../../middleware/authorize'
+import { authorization } from '../../middlewares/authorization'
+import { adminAuthorization } from '../../middlewares/adminAuthorization'
 
-export const router = express.Router()
+export const router = Router()
 
 router.get('/', async (req, res) => {
   const products = await productDAO.getAll()
-  return res.send({ products, admin: req.query.admin || 'false' })
+  return res.send({ data: products })
 })
 
-router.get('/:id', async (req, res) => {
+router.get('/add', adminAuthorization, async (req, res) => {
+  return res.render('add-product', { user: req.user })
+})
+
+router.get('/update', adminAuthorization, async (req, res) => {
+  let { id } = req.query
+  const product = await productDAO.findById(id)
+  return res.render('edit-product', { user: req.user, product })
+})
+
+router.get('/:id', authorization, async (req, res) => {
   let { id } = req.params
-  const product: any = await productDAO.findById(+id)
+  const product: any = await productDAO.findById(id)
   return product
-    ? res.status(200).send({ product, admin: req.query.admin || 'false' })
+    ? res.status(200).send({ data: product })
     : res.status(404).send({ error: 'product not found' })
 })
 
-router.post('/', authCheckMiddleware, async (req, res) => {
+router.post('/', adminAuthorization, async (req, res) => {
   const { body } = req
-  // if (!hasAllProps(body))
-  // return res.status(400).send({ error: 'invalid product' })
-
-  let newProduct = await productDAO.addOne({
-    ...body
-  })
-
-  return res.send({ newProduct })
+  try {
+    const newProduct = await productDAO.addOne(body)
+    return res.send({ data: newProduct })
+  } catch (err) {
+    console.error('Failed to save product', err)
+    return res.send({ error: 'Failed to save product' })
+  }
 })
 
-router.put('/:id', authCheckMiddleware, async (req, res) => {
+router.put('/:id', adminAuthorization, async (req, res) => {
   const { id } = req.params
   const { body } = req
 
-  const updatedProduct = await productDAO.updateById(+id, { ...body })
+  let newData: any = Object.entries(body)
+  newData = newData.reduce((acc: {}, [key, value]: any) => {
+    if (!value) return acc
+    return {
+      ...acc,
+      [key]: value
+    }
+  }, {})
 
-  return res.status(200).send({ updatedProduct })
+  const updatedProduct = await productDAO.updateProduct(id, newData)
+
+  return updatedProduct
+    ? res.status(200).send({ data: updatedProduct })
+    : res.status(404).send({ error: 'product not found' })
 })
 
-router.delete('/:id', authCheckMiddleware, async (req, res) => {
+router.delete('/:id', adminAuthorization, async (req, res) => {
   const { id } = req.params
-  const product: any = await productDAO.deleteOne(+id)
-  return product
-    ? res.status(200).send({ product })
+  const product: any = await productDAO.deleteOne(id)
+  return product.deletedCount
+    ? res.status(200).send({ data: product })
     : res.status(404).send({ error: 'product not found' })
 })

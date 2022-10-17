@@ -1,0 +1,44 @@
+<script defer src="/static/scripts/cart.js"></script>
+<script defer src="/static/scripts/products.js"></script>
+{{> navbar}}
+<main>
+    <section>
+      <h3>Carrito (<span id="counter">{{cartProducts.length}}</span>)</h3>
+      <ul id="cart" class="cart">
+        {{#if cartProducts.length}}
+          {{#each cartProducts}}
+            <li class="product-card">
+                <div class="product-left">
+                <div class="product-details">
+                    <div class="image">
+                    <img src={{product_data.photo_url}} alt="foto de {{product_data.name}}"/>
+                    </div>
+                    <h2 class="name">{{product_data.name}}</h2>
+                </div>
+                <p class="delete-product-btn" onclick=deleteProductFromCart('{{product_data.id}}','{{../user.id}}')>Eliminar</p>
+                </div>
+                <div class="stock-details">
+                <div class="amount">
+                <span onclick=deleteProductFromCart('{{product_data.id}}','{{../user.id}}',false)>-</span>
+                    <p>{{amount}}</p>
+                <span onclick=addProductToCart('{{product_data.id}}','{{../user.id}}')>+</span>
+                </div>
+                <p class="stock">{{product_data.stock}} disponible(s)</p>
+                </div>
+                <div class="price">
+                <p>${{product_data.price}} c/u</p>
+                </div>
+            </li>
+        {{/each}}
+        {{else}}
+            <li>
+                <h3>El carrito esta vacio.</h3>
+            </li>
+        {{/if}}
+        </ul>
+        {{#if cartProducts.length}}
+            <p class="price">Total: $<span id="price"></span></p>
+            <button onclick=emptyCart('{{user.id}}')>Vaciar carrito</button>
+        {{/if}}
+    </section>
+</main>

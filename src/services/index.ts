@@ -1,5 +1,6 @@
 import ProductDAOMongoDB from './daos/ProductDAOMongoDB'
 import CartDAOMongoDB from './daos/CartDAOMongoDB'
+import UserDAO from './daos/UserDAO'
 
 import ProductDAOFirebase from './daos/ProductDAOFirebase'
 import CartDAOFirebase from './daos/CartDAOFirebase'
@@ -32,9 +33,9 @@ export const exportedDAOs = (
   } else if (DAO === 'mongodb') {
     cartDAO = new CartDAOMongoDB()
     productDAO = new ProductDAOMongoDB()
-  } else if (DAO === 'firebase') {
-    cartDAO = new CartDAOFirebase()
-    productDAO = new ProductDAOFirebase()
+    // } else if (DAO === 'firebase') {
+    //   cartDAO = new CartDAOFirebase()
+    //   productDAO = new ProductDAOFirebase()
   } else {
     cartDAO = new CartDAOMemoria()
     productDAO = new ProductDAOMemoria()
@@ -45,3 +46,4 @@ export const exportedDAOs = (
     productDAO
   }
 }
+export const userDAO = new UserDAO()
