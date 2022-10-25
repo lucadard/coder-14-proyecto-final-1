@@ -1,11 +1,8 @@
 import express from 'express'
-import { engine as hbs } from 'express-handlebars'
-import path from 'path'
 
-import { DAOType } from './types'
 import { exportedDAOs } from './services'
 export const { cartDAO, productDAO } = exportedDAOs(
-  (process.env.SELECTED_DAO as DAOType) || 'mongodb'
+  process.env.SELECTED_DAO || 'mongodb'
 )
 import { sessionHandler } from './middlewares/session'
 import {
@@ -15,7 +12,12 @@ import {
 
 import { router as productsRouter } from './routes/products/router'
 import { router as cartsRouter } from './routes/carts/router'
+import { router as randomsRouter } from './routes/randoms/router'
 import { router as authRouter } from './routes/auth/router'
+import { router as infoRouter } from './routes/info/router'
+
+import { hbsConfig } from './config/engine'
+import { argumentsObject } from './config/args'
 
 const app = express()
 
@@ -27,15 +29,7 @@ app.use(passportMiddleware)
 app.use(passportSessionHandler)
 
 app.set('view engine', 'hbs')
-
-app.engine(
-  'hbs',
-  hbs({
-    extname: '.hbs',
-    defaultLayout: path.join(__dirname, '../views/layouts/main.hbs'),
-    layoutsDir: path.join(__dirname, '../views/layouts')
-  })
-)
+app.engine('hbs', hbsConfig)
 
 app.get('/', async (req, res) => {
   const products = (await productDAO.getAll()) || []
@@ -44,13 +38,15 @@ app.get('/', async (req, res) => {
 
 app.use('/api/products', productsRouter)
 app.use('/api/carts', cartsRouter)
+app.use('/api/randoms', randomsRouter)
 app.use('/auth', authRouter)
+app.use('/info', infoRouter)
 
 app.get('*', (_, res) => {
   res.status(404).render('404')
 })
 
-const PORT = process.env.PORT || 8080
+const PORT = argumentsObject.p || 8080
 
 app.listen(PORT, () => {
   console.log(`Server listening on port: ${PORT}`)
