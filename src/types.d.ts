@@ -1,4 +1,11 @@
 declare global {
+  namespace NodeJS {
+    interface ProcessEnv {
+      PORT?: string
+      FIREBASE_CREDENTIALS?: any
+      SELECTED_DAO: 'archivo' | 'memoria' | 'mongodb' | 'firebase'
+    }
+  }
   namespace Express {
     export interface Request {
       user?: any
@@ -12,7 +19,7 @@ export type User = {
   password: string
   admin: boolean
 }
-interface Product {
+export type Product = {
   id: string
   code: string
   name: string
@@ -22,7 +29,7 @@ interface Product {
   price: number
   stock: number
 }
-export interface Cart {
+export type Cart = {
   id: string
   user_id: string
   timestamp: number
@@ -31,5 +38,3 @@ export interface Cart {
     amount: number
   }[]
 }
-
-export type DAOType = 'archivo' | 'memoria' | 'mongodb' | 'firebase'
