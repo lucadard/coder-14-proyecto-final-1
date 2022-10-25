@@ -22,8 +22,6 @@ interface Product {
   price: number
   stock: number
 }
-
-export type newProductData = Omit<Product, 'id' | 'timestamp'>
 export interface Cart {
   id: string
   user_id: string
