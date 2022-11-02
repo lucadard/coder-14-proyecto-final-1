@@ -1,5 +1,6 @@
 import { Router } from 'express'
 import path from 'path'
+import os from 'os'
 
 import { argumentsObject } from '../../config/args'
 
@@ -13,6 +14,7 @@ router.get('/', (_, res) => {
     projectFolder: path.join(__dirname, '..'),
     pid: process.pid,
     nodeVersion: process.versions.node,
-    reservedMemory: process.memoryUsage().rss
+    reservedMemory: process.memoryUsage().rss,
+    processors: os.cpus().length
   })
 })
