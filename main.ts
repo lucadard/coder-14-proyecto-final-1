@@ -3,13 +3,13 @@ import cluster from 'cluster'
 import { createServer } from './src/server'
 import { argumentsObject } from './src/config/args'
 
-if (cluster.isPrimary) console.log(`Running in ${argumentsObject.mode} mode.`)
+if (cluster.isPrimary) {
+  console.log(`Running in ${argumentsObject.mode} mode.`)
 
-if (cluster.isPrimary && argumentsObject.mode === 'cluster') {
-  console.log(`Primary: ${process.pid}. Is running.`)
-
-  for (let i = 0; i < 5; i++) {
-    cluster.fork({ id: i, PORT: argumentsObject.port + i })
+  for (let i = 0; i < argumentsObject.i; i++) {
+    const PORT =
+      i === 0 ? argumentsObject.port + i : argumentsObject.port + i + 1
+    cluster.fork({ PORT })
   }
 
   cluster.on('exit', (worker) => {
@@ -18,8 +18,12 @@ if (cluster.isPrimary && argumentsObject.mode === 'cluster') {
   })
 } else {
   async function initializeServer() {
+    const PORT =
+      argumentsObject.mode === 'fork'
+        ? argumentsObject.port
+        : +process.env.PORT!
     try {
-      const server = await createServer(+process.env.PORT!)
+      const server = await createServer(PORT)
       console.log(
         `Worker ${cluster.worker?.id}, pid: ${process.pid}: Listening on port ${
           server.address().port
