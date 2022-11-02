@@ -17,7 +17,6 @@ import { router as authRouter } from './routes/auth/router'
 import { router as infoRouter } from './routes/info/router'
 
 import { hbsConfig } from './config/engine'
-import { argumentsObject } from './config/args'
 
 const app = express()
 
@@ -46,8 +45,9 @@ app.get('*', (_, res) => {
   res.status(404).render('404')
 })
 
-const PORT = argumentsObject.p || 8080
-
-app.listen(PORT, () => {
-  console.log(`Server listening on port: ${PORT}`)
-})
+export const createServer = (PORT: number) => {
+  return new Promise<any | Error>((resolve, reject) => {
+    const server = app.listen(PORT, () => resolve(server))
+    server.on('error', (err) => reject(err))
+  })
+}
