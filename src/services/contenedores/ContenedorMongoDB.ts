@@ -32,7 +32,6 @@ export default class ContenedorMongoDB<T> {
       id: generateId(),
       timestamp: +new Date()
     })
-    console.log(newItem)
     try {
       await newItem.save()
       return newItem
@@ -42,8 +41,6 @@ export default class ContenedorMongoDB<T> {
   }
 
   updateById = async (id: string, data: any) => {
-    console.log({ ...data })
-
     const updatedItem = await this.collection.updateOne(
       { id },
       { $set: { ...data } }

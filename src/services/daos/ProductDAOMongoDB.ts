@@ -21,7 +21,6 @@ export default class ProductDAO extends ContenedorMongoDB<Product> {
 
   updateProduct = async (id: string, newData: any) => {
     const product = await this.findById(id)
-    console.log(id, product)
     if (!product) return
 
     const updatedProduct = { ...product, ...newData }

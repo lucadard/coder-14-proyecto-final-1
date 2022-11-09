@@ -1,4 +1,5 @@
 import { Router } from 'express'
+import { logger } from '../../config/logger'
 import { adminAuthorization } from '../../middlewares/adminAuthorization'
 import { authorization } from '../../middlewares/authorization'
 
@@ -7,6 +8,7 @@ import { cartDAO, productDAO } from '../../server'
 export const router = Router()
 
 router.get('/:id/products', async (req, res) => {
+  logger.petition(req)
   const { id } = req.params
   const cartProducts = (await cartDAO.findById(id))?.products
   return cartProducts
@@ -15,6 +17,7 @@ router.get('/:id/products', async (req, res) => {
 })
 
 router.get('/', authorization, async (req, res) => {
+  logger.petition(req)
   let cartProducts: any = []
   let price = 0
   if (req.user) {
@@ -33,6 +36,7 @@ router.get('/', authorization, async (req, res) => {
 })
 
 router.post('/', adminAuthorization, async (req, res) => {
+  logger.petition(req)
   const { body } = req
   const newCart = await cartDAO.addOne({
     ...body,
@@ -45,6 +49,7 @@ router.post('/', adminAuthorization, async (req, res) => {
 })
 
 router.post('/:id_user/products/:id_prod', authorization, async (req, res) => {
+  logger.petition(req)
   const { id_user, id_prod } = req.params
   const product = await productDAO.findById(id_prod)
   if (!product) return res.status(404).send({ error: 'product not found' })
@@ -55,8 +60,8 @@ router.post('/:id_user/products/:id_prod', authorization, async (req, res) => {
 })
 
 router.delete('/:user_id', authorization, async (req, res) => {
+  logger.petition(req)
   const { user_id } = req.params
-  console.log(user_id)
   const cart = await cartDAO.emptyCart(user_id)
   return cart
     ? res.status(200).send({ data: cart })
@@ -67,6 +72,7 @@ router.delete(
   '/:id_user/products/:id_prod',
   authorization,
   async (req, res) => {
+    logger.petition(req)
     const { id_user, id_prod } = req.params
     const { deleteAll } = req.query
 

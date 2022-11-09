@@ -1,4 +1,5 @@
 import express from 'express'
+import compression from 'compression'
 
 import { exportedDAOs } from './services'
 export const { cartDAO, productDAO } = exportedDAOs(
@@ -17,9 +18,11 @@ import { router as authRouter } from './routes/auth/router'
 import { router as infoRouter } from './routes/info/router'
 
 import { hbsConfig } from './config/engine'
+import { logger } from './config/logger'
 
 const app = express()
 
+app.use(compression())
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 app.use('/static', express.static('public'))
@@ -41,7 +44,8 @@ app.use('/api/randoms', randomsRouter)
 app.use('/auth', authRouter)
 app.use('/info', infoRouter)
 
-app.get('*', (_, res) => {
+app.get('*', (req, res) => {
+  logger.petition('warn', req)
   res.status(404).render('404')
 })
 

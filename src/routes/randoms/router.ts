@@ -3,6 +3,7 @@ import { fork } from 'child_process'
 import path from 'path'
 
 import { argumentsObject } from '../../config/args'
+import { logger } from '../../config/logger'
 
 const calculate = (amount: number) => {
   const randoms: { [key: string]: number } = {}
@@ -24,8 +25,9 @@ const calculate = (amount: number) => {
 
 export const router = Router()
 
-router.get('/', ({ query }, res) => {
-  let cant: number = query.cant ? +query.cant : 100000000
+router.get('/', (req, res) => {
+  logger.petition(req)
+  let cant: number = req.query.cant ? +req.query.cant : 100000000
 
   if (argumentsObject.mode === 'cluster') res.json(calculate(cant))
   else {

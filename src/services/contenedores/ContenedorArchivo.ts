@@ -1,4 +1,5 @@
 import * as fs from 'fs/promises'
+import { logger } from '../../config/logger'
 
 import config from '../config'
 
@@ -13,7 +14,7 @@ export default class ContenedorArchivo<T> {
       await fs.writeFile(this.route, JSON.stringify(data, null, 2))
       return data
     } catch (err) {
-      console.error(err)
+      logger.error(err)
     }
   }
 
@@ -22,7 +23,7 @@ export default class ContenedorArchivo<T> {
       const data = await fs.readFile(this.route, 'utf-8')
       return JSON.parse(data) as T[]
     } catch (err) {
-      console.error(err)
+      logger.error(err)
     }
   }
 

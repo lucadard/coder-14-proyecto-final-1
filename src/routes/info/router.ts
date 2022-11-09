@@ -3,10 +3,12 @@ import path from 'path'
 import os from 'os'
 
 import { argumentsObject } from '../../config/args'
+import { logger } from '../../config/logger'
 
 export const router = Router()
 
-router.get('/', (_, res) => {
+router.get('/', (req, res) => {
+  logger.petition(req)
   res.json({
     args: argumentsObject,
     os: process.platform,

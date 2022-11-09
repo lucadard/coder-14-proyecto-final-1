@@ -1,5 +1,6 @@
 import passport from 'passport'
 import { Strategy as LocalStrategy } from 'passport-local'
+import { logger } from '../config/logger'
 import { cartDAO } from '../server'
 import { userDAO } from '../services'
 
@@ -12,7 +13,7 @@ const localRegisterStrategy = new LocalStrategy(
       const newUser = await userDAO.register({ username, password })
       done(null, newUser)
     } catch (err: any) {
-      console.error(err)
+      logger.error(err)
       done(null, false, err)
     }
   }
@@ -24,7 +25,7 @@ const localLoginStrategy = new LocalStrategy(
       const user = await userDAO.authenticate({ username, password })
       done(null, user)
     } catch (err: any) {
-      console.error(err)
+      logger.error(err)
       done(null, false, err)
     }
   }

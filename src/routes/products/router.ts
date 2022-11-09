@@ -6,15 +6,18 @@ import { productDAO } from '../../server'
 import { authorization } from '../../middlewares/authorization'
 import { adminAuthorization } from '../../middlewares/adminAuthorization'
 import { Product } from '../../types'
+import { logger } from '../../config/logger'
 
 export const router = Router()
 
 router.get('/', async (req, res) => {
+  logger.petition(req)
   const products = await productDAO.getAll()
   return res.send({ data: products })
 })
 
 router.get('/add', adminAuthorization, async (req, res) => {
+  logger.petition(req)
   return res.render('add-product', {
     user: req.user,
     title: 'Agregar producto'
@@ -22,6 +25,7 @@ router.get('/add', adminAuthorization, async (req, res) => {
 })
 
 router.get('/update', adminAuthorization, async (req, res) => {
+  logger.petition(req)
   let { id } = req.query
   const product: Product = await productDAO.findById(id)
   return res.render('edit-product', {
@@ -32,6 +36,7 @@ router.get('/update', adminAuthorization, async (req, res) => {
 })
 
 router.get('/:id', authorization, async (req, res) => {
+  logger.petition(req)
   let { id } = req.params
   const product: any = await productDAO.findById(id)
   return product
@@ -40,17 +45,19 @@ router.get('/:id', authorization, async (req, res) => {
 })
 
 router.post('/', adminAuthorization, async (req, res) => {
+  logger.petition(req)
   const { body } = req
   try {
     const newProduct = await productDAO.addOne(body)
     return res.send({ data: newProduct })
   } catch (err) {
-    console.error('Failed to save product', err)
+    logger.error('Failed to save product')
     return res.send({ error: 'Failed to save product' })
   }
 })
 
 router.put('/:id', adminAuthorization, async (req, res) => {
+  logger.petition(req)
   const { id } = req.params
   const { body } = req
 
@@ -71,6 +78,7 @@ router.put('/:id', adminAuthorization, async (req, res) => {
 })
 
 router.delete('/:id', adminAuthorization, async (req, res) => {
+  logger.petition(req)
   const { id } = req.params
   const product: any = await productDAO.deleteOne(id)
   return product.deletedCount

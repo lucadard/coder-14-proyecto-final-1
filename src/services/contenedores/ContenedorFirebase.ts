@@ -1,4 +1,5 @@
 import admin, { ServiceAccount } from 'firebase-admin'
+import { logger } from '../../config/logger'
 
 import config from '../config'
 
@@ -20,7 +21,7 @@ export default class ContenedorFirebase<T> {
       let docs = querySnapshot.docs
       return docs.map((doc) => doc.data())
     } catch (err) {
-      console.error(err)
+      logger.error(err)
     }
   }
 
@@ -30,7 +31,7 @@ export default class ContenedorFirebase<T> {
       const item = await doc.get()
       return item.data()
     } catch (err) {
-      console.error(err)
+      logger.error(err)
     }
   }
 
@@ -44,7 +45,7 @@ export default class ContenedorFirebase<T> {
         timestamp: +new Date()
       })
     } catch (err) {
-      console.error(err)
+      logger.error(err)
     }
   }
 
@@ -54,7 +55,7 @@ export default class ContenedorFirebase<T> {
       let item = await doc.update({ ...data })
       return item
     } catch (err) {
-      console.error(err)
+      logger.error(err)
     }
   }
   deleteOne = async (id: number) => {
@@ -63,7 +64,7 @@ export default class ContenedorFirebase<T> {
       const item = await doc.delete()
       return item
     } catch (err) {
-      console.error(err)
+      logger.error(err)
     }
   }
   deleteAll = async () => {
