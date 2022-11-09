@@ -13,7 +13,7 @@ const localRegisterStrategy = new LocalStrategy(
       const newUser = await userDAO.register({ username, password })
       done(null, newUser)
     } catch (err: any) {
-      logger.error(err)
+      logger.error(`Error while register. ${err}`)
       done(null, false, err)
     }
   }
@@ -25,7 +25,7 @@ const localLoginStrategy = new LocalStrategy(
       const user = await userDAO.authenticate({ username, password })
       done(null, user)
     } catch (err: any) {
-      logger.error(err)
+      logger.error(`Error while login. ${err}`)
       done(null, false, err)
     }
   }
