@@ -34,6 +34,7 @@ app.set('view engine', 'hbs')
 app.engine('hbs', hbsConfig)
 
 app.get('/', async (req, res) => {
+  logger.petition(req)
   const products = (await productDAO.getAll()) || []
   res.render('index', { user: req.user, products, title: 'Inicio' })
 })
@@ -45,7 +46,7 @@ app.use('/auth', authRouter)
 app.use('/info', infoRouter)
 
 app.get('*', (req, res) => {
-  logger.petition('warn', req)
+  logger.petition(req, 'warn')
   res.status(404).render('404')
 })
 
