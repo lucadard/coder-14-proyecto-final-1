@@ -1,0 +1,870 @@
+Statistical profiling result from nolog-v8.log, (1835 ticks, 34 unaccounted, 0 excluded).
+
+ [Shared libraries]:
+   ticks  total  nonlib   name
+     49    2.7%          /usr/lib/system/libsystem_kernel.dylib
+     29    1.6%          /usr/lib/system/libsystem_malloc.dylib
+     26    1.4%          /usr/lib/system/libsystem_pthread.dylib
+     15    0.8%          /usr/lib/libc++.1.dylib
+     14    0.8%          /usr/lib/system/libsystem_c.dylib
+      6    0.3%          /System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation
+      3    0.2%          /usr/lib/system/libsystem_platform.dylib
+      2    0.1%          /usr/lib/system/libdyld.dylib
+      2    0.1%          /usr/lib/libobjc.A.dylib
+      1    0.1%          /usr/lib/system/libxpc.dylib
+      1    0.1%          /usr/lib/libc++abi.dylib
+
+ [JavaScript]:
+   ticks  total  nonlib   name
+      7    0.4%    0.4%  LazyCompile: *resolve node:path:1091:10
+      4    0.2%    0.2%  LazyCompile: *Module._nodeModulePaths node:internal/modules/cjs/loader:640:37
+      2    0.1%    0.1%  LazyCompile: *nextTick node:internal/process/task_queues:104:18
+      2    0.1%    0.1%  LazyCompile: *matchKnownFields node:_http_incoming:276:26
+      1    0.1%    0.1%  RegExp: ^[\^_`a-zA-Z\-0-9!#$%&'*+.|~]+$
+      1    0.1%    0.1%  RegExp: ;\s*charset\s*=
+      1    0.1%    0.1%  LazyCompile: *next /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/express/lib/router/index.js:177:16
+      1    0.1%    0.1%  LazyCompile: *dirname node:path:1275:10
+      1    0.1%    0.1%  LazyCompile: *Writable.write /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/readable-stream/lib/_stream_writable.js:288:37
+      1    0.1%    0.1%  Function: ^write node:fs:817:15
+      1    0.1%    0.1%  Function: ^validateBoolean node:internal/validators:148:25
+      1    0.1%    0.1%  Function: ^utcDate node:internal/http:14:17
+      1    0.1%    0.1%  Function: ^urlencodedParser /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/body-parser/lib/types/urlencoded.js:79:36
+      1    0.1%    0.1%  Function: ^unenroll node:timers:78:18
+      1    0.1%    0.1%  Function: ^setStreamTimeout node:internal/stream_base_commons:237:26
+      1    0.1%    0.1%  Function: ^realpathSync node:fs:2460:22
+      1    0.1%    0.1%  Function: ^processHeader node:_http_outgoing:511:23
+      1    0.1%    0.1%  Function: ^onWriteComplete node:internal/stream_base_commons:80:25
+      1    0.1%    0.1%  Function: ^normalizeParseOptions /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/qs/lib/parse.js:204:59
+      1    0.1%    0.1%  Function: ^maybeReadMore_ node:internal/streams/readable:609:24
+      1    0.1%    0.1%  Function: ^maybeReadMore_ /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/readable-stream/lib/_stream_readable.js:565:24
+      1    0.1%    0.1%  Function: ^log /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/winston/lib/winston/transports/file.js:117:6
+      1    0.1%    0.1%  Function: ^handle /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/express/lib/router/index.js:136:31
+      1    0.1%    0.1%  Function: ^getTimerDuration node:internal/timers:383:26
+      1    0.1%    0.1%  Function: ^getHeader node:_http_outgoing:647:57
+      1    0.1%    0.1%  Function: ^get node:net:1847:6
+      1    0.1%    0.1%  Function: ^get node:internal/streams/duplex:97:8
+      1    0.1%    0.1%  Function: ^fromString /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/mongodb/lib/utils.js:316:22
+      1    0.1%    0.1%  Function: ^emitReadable_ node:internal/streams/readable:574:23
+      1    0.1%    0.1%  Function: ^emitBeforeScript node:internal/async_hooks:509:26
+      1    0.1%    0.1%  Function: ^cpus node:os:133:14
+      1    0.1%    0.1%  Function: ^basename node:path:1306:11
+      1    0.1%    0.1%  Function: ^_getMaxListeners node:events:414:26
+      1    0.1%    0.1%  Function: ^Stream node:internal/streams/legacy:10:16
+      1    0.1%    0.1%  Function: ^Session /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/express-session/session/session.js:24:17
+      1    0.1%    0.1%  Function: ^Readable node:internal/streams/readable:181:18
+      1    0.1%    0.1%  Function: ^Module._findPath node:internal/modules/cjs/loader:505:28
+      1    0.1%    0.1%  Function: ^ImmediateList.append node:internal/timers:269:42
+      1    0.1%    0.1%  Function: ^EventEmitter.init node:events:337:29
+      1    0.1%    0.1%  Function: ^<anonymous> node:internal/validators:74:3
+      1    0.1%    0.1%  Function: ^<anonymous> /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/mongoose/lib/helpers/pluralize.js:86:34
+
+ [C++]:
+   ticks  total  nonlib   name
+    723   39.4%   42.9%  t node::(anonymous namespace)::BindingData::~BindingData()
+    351   19.1%   20.8%  T node::contextify::ContextifyContext::CompileFunction(v8::FunctionCallbackInfo<v8::Value> const&)
+    256   14.0%   15.2%  T _posix_spawnattr_setflags
+     81    4.4%    4.8%  t node::fs::Read(v8::FunctionCallbackInfo<v8::Value> const&)
+     31    1.7%    1.8%  T _sigprocmask
+     20    1.1%    1.2%  T _mach_port_insert_member
+     20    1.1%    1.2%  T __kernelrpc_mach_port_move_member_trap
+     18    1.0%    1.1%  t node::fs::InternalModuleReadJSON(v8::FunctionCallbackInfo<v8::Value> const&)
+     16    0.9%    0.9%  t node::fs::Open(v8::FunctionCallbackInfo<v8::Value> const&)
+     11    0.6%    0.7%  t node::fs::InternalModuleStat(v8::FunctionCallbackInfo<v8::Value> const&)
+      8    0.4%    0.5%  T _mach_timebase_info_trap
+      7    0.4%    0.4%  t __os_nospin_lock_lock_slow
+      7    0.4%    0.4%  T __kernelrpc_mach_port_get_refs
+      6    0.3%    0.4%  t std::__1::basic_ostream<char, std::__1::char_traits<char> >& std::__1::__put_character_sequence<char, std::__1::char_traits<char> >(std::__1::basic_ostream<char, std::__1::char_traits<char> >&, char const*, unsigned long)
+      5    0.3%    0.3%  t std::__1::ostreambuf_iterator<char, std::__1::char_traits<char> > std::__1::__pad_and_output<char, std::__1::char_traits<char> >(std::__1::ostreambuf_iterator<char, std::__1::char_traits<char> >, char const*, char const*, char const*, std::__1::ios_base&, char)
+      3    0.2%    0.2%  T node::fs::NewFSReqCallback(v8::FunctionCallbackInfo<v8::Value> const&)
+      3    0.2%    0.2%  T _mach_port_insert_right
+      3    0.2%    0.2%  T ___bsdthread_terminate
+      2    0.1%    0.1%  t void node::Buffer::(anonymous namespace)::StringSlice<(node::encoding)1>(v8::FunctionCallbackInfo<v8::Value> const&)
+      2    0.1%    0.1%  t node::fs::FStat(v8::FunctionCallbackInfo<v8::Value> const&)
+      2    0.1%    0.1%  t __os_nospin_lock_unlock_slow
+      2    0.1%    0.1%  t ___pfz_setup
+      2    0.1%    0.1%  T node::fs::Close(v8::FunctionCallbackInfo<v8::Value> const&)
+      2    0.1%    0.1%  T node::AsyncHooks::push_async_context(double, double, v8::Local<v8::Object>)
+      2    0.1%    0.1%  T _task_get_exception_ports
+      2    0.1%    0.1%  T _connect$NOCANCEL
+      2    0.1%    0.1%  T ___libplatform_init
+      1    0.1%    0.1%  t void node::cares_wrap::(anonymous namespace)::Query<node::cares_wrap::QueryWrap<node::cares_wrap::TxtTraits> >(v8::FunctionCallbackInfo<v8::Value> const&)
+      1    0.1%    0.1%  t node::fs::WriteBuffer(v8::FunctionCallbackInfo<v8::Value> const&)
+      1    0.1%    0.1%  t node::fs::LStat(v8::FunctionCallbackInfo<v8::Value> const&)
+      1    0.1%    0.1%  t node::cares_wrap::(anonymous namespace)::GetAddrInfo(v8::FunctionCallbackInfo<v8::Value> const&)
+      1    0.1%    0.1%  t node::EnvGetter(v8::Local<v8::Name>, v8::PropertyCallbackInfo<v8::Value> const&)
+      1    0.1%    0.1%  t __os_once_gate_wait
+      1    0.1%    0.1%  T node::loader::ModuleWrap::Instantiate(v8::FunctionCallbackInfo<v8::Value> const&)
+      1    0.1%    0.1%  T node::fs::AfterInteger(uv_fs_s*)
+      1    0.1%    0.1%  T node::binding::DLOpen(v8::FunctionCallbackInfo<v8::Value> const&)
+      1    0.1%    0.1%  T node::InternalCallbackScope::~InternalCallbackScope()
+      1    0.1%    0.1%  T _os_unfair_lock_lock_with_options
+      1    0.1%    0.1%  T _mk_timer_arm
+      1    0.1%    0.1%  T _host_get_special_port
+      1    0.1%    0.1%  T __simple_dprintf
+
+ [Summary]:
+   ticks  total  nonlib   name
+     52    2.8%    3.1%  JavaScript
+   1601   87.2%   94.9%  C++
+     93    5.1%    5.5%  GC
+    148    8.1%          Shared libraries
+     34    1.9%          Unaccounted
+
+ [C++ entry points]:
+   ticks    cpp   total   name
+    670   54.4%   36.5%  t node::(anonymous namespace)::BindingData::~BindingData()
+    351   28.5%   19.1%  T node::contextify::ContextifyContext::CompileFunction(v8::FunctionCallbackInfo<v8::Value> const&)
+     81    6.6%    4.4%  t node::fs::Read(v8::FunctionCallbackInfo<v8::Value> const&)
+     20    1.6%    1.1%  T _sigprocmask
+     18    1.5%    1.0%  t node::fs::InternalModuleReadJSON(v8::FunctionCallbackInfo<v8::Value> const&)
+     18    1.5%    1.0%  T __kernelrpc_mach_port_move_member_trap
+     16    1.3%    0.9%  t node::fs::Open(v8::FunctionCallbackInfo<v8::Value> const&)
+     11    0.9%    0.6%  t node::fs::InternalModuleStat(v8::FunctionCallbackInfo<v8::Value> const&)
+      6    0.5%    0.3%  T __kernelrpc_mach_port_get_refs
+      5    0.4%    0.3%  t std::__1::ostreambuf_iterator<char, std::__1::char_traits<char> > std::__1::__pad_and_output<char, std::__1::char_traits<char> >(std::__1::ostreambuf_iterator<char, std::__1::char_traits<char> >, char const*, char const*, char const*, std::__1::ios_base&, char)
+      5    0.4%    0.3%  t std::__1::basic_ostream<char, std::__1::char_traits<char> >& std::__1::__put_character_sequence<char, std::__1::char_traits<char> >(std::__1::basic_ostream<char, std::__1::char_traits<char> >&, char const*, unsigned long)
+      5    0.4%    0.3%  t __os_nospin_lock_lock_slow
+      3    0.2%    0.2%  T node::fs::NewFSReqCallback(v8::FunctionCallbackInfo<v8::Value> const&)
+      2    0.2%    0.1%  t void node::Buffer::(anonymous namespace)::StringSlice<(node::encoding)1>(v8::FunctionCallbackInfo<v8::Value> const&)
+      2    0.2%    0.1%  t node::fs::FStat(v8::FunctionCallbackInfo<v8::Value> const&)
+      2    0.2%    0.1%  t ___pfz_setup
+      2    0.2%    0.1%  T node::fs::Close(v8::FunctionCallbackInfo<v8::Value> const&)
+      2    0.2%    0.1%  T _task_get_exception_ports
+      2    0.2%    0.1%  T ___libplatform_init
+      1    0.1%    0.1%  t void node::cares_wrap::(anonymous namespace)::Query<node::cares_wrap::QueryWrap<node::cares_wrap::TxtTraits> >(v8::FunctionCallbackInfo<v8::Value> const&)
+      1    0.1%    0.1%  t node::fs::WriteBuffer(v8::FunctionCallbackInfo<v8::Value> const&)
+      1    0.1%    0.1%  t node::fs::LStat(v8::FunctionCallbackInfo<v8::Value> const&)
+      1    0.1%    0.1%  t node::cares_wrap::(anonymous namespace)::GetAddrInfo(v8::FunctionCallbackInfo<v8::Value> const&)
+      1    0.1%    0.1%  t node::EnvGetter(v8::Local<v8::Name>, v8::PropertyCallbackInfo<v8::Value> const&)
+      1    0.1%    0.1%  t __os_once_gate_wait
+      1    0.1%    0.1%  T node::loader::ModuleWrap::Instantiate(v8::FunctionCallbackInfo<v8::Value> const&)
+      1    0.1%    0.1%  T node::binding::DLOpen(v8::FunctionCallbackInfo<v8::Value> const&)
+      1    0.1%    0.1%  T _os_unfair_lock_lock_with_options
+      1    0.1%    0.1%  T _host_get_special_port
+      1    0.1%    0.1%  T __simple_dprintf
+
+ [Bottom up (heavy) profile]:
+  Note: percentage shows a share of a particular caller in the total
+  amount of its parent calls.
+  Callers occupying less than 1.0% are not shown.
+
+   ticks parent  name
+    723   39.4%  t node::(anonymous namespace)::BindingData::~BindingData()
+     56    7.7%    Function: ^compileForInternalLoader node:internal/bootstrap/loaders:316:27
+     46   82.1%      Function: ^nativeModuleRequire node:internal/bootstrap/loaders:349:29
+      6   13.0%        Function: ~<anonymous> node:crypto:1:1
+      6  100.0%          Function: ^compileForInternalLoader node:internal/bootstrap/loaders:316:27
+      6  100.0%            Function: ^compileForPublicLoader node:internal/bootstrap/loaders:263:25
+      4    8.7%        Function: ~<anonymous> node:http:1:1
+      4  100.0%          Function: ^compileForInternalLoader node:internal/bootstrap/loaders:316:27
+      4  100.0%            LazyCompile: ~compileForPublicLoader node:internal/bootstrap/loaders:263:25
+      3    6.5%        Function: ~<anonymous> node:tls:1:1
+      3  100.0%          Function: ^compileForInternalLoader node:internal/bootstrap/loaders:316:27
+      3  100.0%            Function: ^compileForPublicLoader node:internal/bootstrap/loaders:263:25
+      3    6.5%        Function: ~<anonymous> node:internal/child_process:1:1
+      3  100.0%          Function: ^compileForInternalLoader node:internal/bootstrap/loaders:316:27
+      3  100.0%            Function: ^nativeModuleRequire node:internal/bootstrap/loaders:349:29
+      3    6.5%        Function: ~<anonymous> node:_http_client:1:1
+      3  100.0%          Function: ^compileForInternalLoader node:internal/bootstrap/loaders:316:27
+      3  100.0%            Function: ^nativeModuleRequire node:internal/bootstrap/loaders:349:29
+      2    4.3%        LazyCompile: ~lazyRequire node:internal/crypto/util:67:21
+      2  100.0%          LazyCompile: ~get node:crypto:294:8
+      2  100.0%            t node::(anonymous namespace)::BindingData::~BindingData()
+      2    4.3%        Function: ~<anonymous> node:internal/modules/esm/loader:1:1
+      2  100.0%          LazyCompile: ~compileForInternalLoader node:internal/bootstrap/loaders:316:27
+      2  100.0%            Function: ^nativeModuleRequire node:internal/bootstrap/loaders:349:29
+      2    4.3%        Function: ~<anonymous> node:internal/modules/esm/load:1:1
+      2  100.0%          Function: ^compileForInternalLoader node:internal/bootstrap/loaders:316:27
+      2  100.0%            Function: ^nativeModuleRequire node:internal/bootstrap/loaders:349:29
+      2    4.3%        Function: ~<anonymous> node:internal/crypto/hkdf:1:1
+      2  100.0%          Function: ^compileForInternalLoader node:internal/bootstrap/loaders:316:27
+      2  100.0%            Function: ^nativeModuleRequire node:internal/bootstrap/loaders:349:29
+      2    4.3%        Function: ~<anonymous> node:internal/cluster/primary:1:1
+      2  100.0%          Function: ^compileForInternalLoader node:internal/bootstrap/loaders:316:27
+      2  100.0%            Function: ^nativeModuleRequire node:internal/bootstrap/loaders:349:29
+      2    4.3%        Function: ~<anonymous> node:child_process:1:1
+      2  100.0%          Function: ^compileForInternalLoader node:internal/bootstrap/loaders:316:27
+      2  100.0%            Function: ^nativeModuleRequire node:internal/bootstrap/loaders:349:29
+      1    2.2%        LazyCompile: ~lazyLoadStreams node:fs:2893:25
+      1  100.0%          LazyCompile: ~get ReadStream node:fs:3036:17
+      1  100.0%            t node::(anonymous namespace)::BindingData::~BindingData()
+      1    2.2%        LazyCompile: ~initializeCJSLoader node:internal/bootstrap/pre_execution:521:29
+      1  100.0%          LazyCompile: ~prepareMainThreadExecution node:internal/bootstrap/pre_execution:29:36
+      1  100.0%            Function: ~<anonymous> node:internal/main/run_main_module:1:1
+      1    2.2%        LazyCompile: ~get node:dns:415:8
+      1  100.0%          t node::(anonymous namespace)::BindingData::~BindingData()
+      1  100.0%            Function: ^getOwn node:internal/bootstrap/loaders:187:16
+      1    2.2%        Function: ~<anonymous> node:tty:1:1
+      1  100.0%          Function: ^compileForInternalLoader node:internal/bootstrap/loaders:316:27
+      1  100.0%            LazyCompile: ~compileForPublicLoader node:internal/bootstrap/loaders:263:25
+      1    2.2%        Function: ~<anonymous> node:internal/process/esm_loader:1:1
+      1  100.0%          LazyCompile: ~compileForInternalLoader node:internal/bootstrap/loaders:316:27
+      1  100.0%            Function: ^nativeModuleRequire node:internal/bootstrap/loaders:349:29
+      1    2.2%        Function: ~<anonymous> node:internal/crypto/util:1:1
+      1  100.0%          Function: ^compileForInternalLoader node:internal/bootstrap/loaders:316:27
+      1  100.0%            Function: ^nativeModuleRequire node:internal/bootstrap/loaders:349:29
+      1    2.2%        Function: ~<anonymous> node:internal/crypto/pbkdf2:1:1
+      1  100.0%          Function: ^compileForInternalLoader node:internal/bootstrap/loaders:316:27
+      1  100.0%            Function: ^nativeModuleRequire node:internal/bootstrap/loaders:349:29
+      1    2.2%        Function: ~<anonymous> node:internal/blocklist:1:1
+      1  100.0%          Function: ^compileForInternalLoader node:internal/bootstrap/loaders:316:27
+      1  100.0%            Function: ^nativeModuleRequire node:internal/bootstrap/loaders:349:29
+      1    2.2%        Function: ~<anonymous> node:dns:1:1
+      1  100.0%          Function: ^compileForInternalLoader node:internal/bootstrap/loaders:316:27
+      1  100.0%            Function: ^compileForPublicLoader node:internal/bootstrap/loaders:263:25
+      1    2.2%        Function: ~<anonymous> node:cluster:1:1
+      1  100.0%          Function: ^compileForInternalLoader node:internal/bootstrap/loaders:316:27
+      1  100.0%            LazyCompile: ~compileForPublicLoader node:internal/bootstrap/loaders:263:25
+      1    2.2%        Function: ~<anonymous> node:assert:1:1
+      1  100.0%          Function: ^compileForInternalLoader node:internal/bootstrap/loaders:316:27
+      1  100.0%            Function: ^compileForPublicLoader node:internal/bootstrap/loaders:263:25
+      1    2.2%        Function: ~<anonymous> node:_tls_wrap:1:1
+      1  100.0%          Function: ^compileForInternalLoader node:internal/bootstrap/loaders:316:27
+      1  100.0%            Function: ^nativeModuleRequire node:internal/bootstrap/loaders:349:29
+      1    2.2%        Function: ~<anonymous> node:_tls_common:1:1
+      1  100.0%          Function: ^compileForInternalLoader node:internal/bootstrap/loaders:316:27
+      1  100.0%            Function: ^nativeModuleRequire node:internal/bootstrap/loaders:349:29
+      1    2.2%        Function: ~<anonymous> node:_http_outgoing:1:1
+      1  100.0%          Function: ^compileForInternalLoader node:internal/bootstrap/loaders:316:27
+      1  100.0%            Function: ^nativeModuleRequire node:internal/bootstrap/loaders:349:29
+      1    2.2%        Function: ~<anonymous> node:_http_common:1:1
+      1  100.0%          Function: ^compileForInternalLoader node:internal/bootstrap/loaders:316:27
+      1  100.0%            Function: ^nativeModuleRequire node:internal/bootstrap/loaders:349:29
+     10   17.9%      Function: ^compileForPublicLoader node:internal/bootstrap/loaders:263:25
+     10  100.0%        Function: ^loadNativeModule node:internal/modules/cjs/helpers:44:26
+     10  100.0%          Function: ^Module._load node:internal/modules/cjs/loader:771:24
+     10  100.0%            Function: ^Module.require node:internal/modules/cjs/loader:1020:36
+     49    6.8%    Function: ^cpus node:os:133:14
+     48   98.0%      Function: ^<anonymous> /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/dist/main.js:1:10075
+     48  100.0%        Function: ^handle /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/express/lib/router/layer.js:86:49
+     44   91.7%          Function: ^next /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/express/lib/router/route.js:116:16
+     44  100.0%            Function: ^dispatch /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/express/lib/router/route.js:98:45
+      4    8.3%          LazyCompile: ~next /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/express/lib/router/route.js:116:16
+      4  100.0%            Function: ^dispatch /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/express/lib/router/route.js:98:45
+      1    2.0%      LazyCompile: ~<anonymous> /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/dist/main.js:1:10075
+      1  100.0%        Function: ^handle /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/express/lib/router/layer.js:86:49
+      1  100.0%          LazyCompile: ~next /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/express/lib/router/route.js:116:16
+      1  100.0%            LazyCompile: ~dispatch /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/express/lib/router/route.js:98:45
+     38    5.3%    t node::(anonymous namespace)::BindingData::~BindingData()
+      2    5.3%      t node::(anonymous namespace)::BindingData::~BindingData()
+      1   50.0%        Function: ^stat node:internal/modules/cjs/loader:151:14
+      1  100.0%          Function: ^Module._findPath node:internal/modules/cjs/loader:505:28
+      1  100.0%            Function: ^Module._resolveFilename node:internal/modules/cjs/loader:865:35
+      1   50.0%        Function: ^readPackage node:internal/modules/cjs/loader:301:21
+      1  100.0%          Function: ^readPackageScope node:internal/modules/cjs/loader:332:26
+      1  100.0%            Function: ^trySelf node:internal/modules/cjs/loader:452:17
+      2    5.3%      LazyCompile: ~resolvePackageTargetString node:internal/modules/esm/resolve:499:36
+      2  100.0%        LazyCompile: ~resolvePackageTarget node:internal/modules/esm/resolve:567:30
+      2  100.0%          LazyCompile: ~resolvePackageTarget node:internal/modules/esm/resolve:567:30
+      2  100.0%            LazyCompile: ~resolvePackageTarget node:internal/modules/esm/resolve:567:30
+      2    5.3%      LazyCompile: *realpathSync node:fs:2460:22
+      2  100.0%        Function: ^toRealPath node:internal/modules/cjs/loader:404:20
+      2  100.0%          Function: ^tryFile node:internal/modules/cjs/loader:395:17
+      2  100.0%            Function: ^tryExtensions node:internal/modules/cjs/loader:411:23
+      2    5.3%      Function: ^strEscape /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/safe-stable-stringify/index.js:56:20
+      2  100.0%        Function: ^stringifyFnReplacer /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/safe-stable-stringify/index.js:230:32
+      2  100.0%          Function: ^stringifyFnReplacer /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/safe-stable-stringify/index.js:230:32
+      2  100.0%            Function: ^stringify /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/safe-stable-stringify/index.js:649:22
+      2    5.3%      Function: ^send /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/express/lib/response.js:111:25
+      2  100.0%        Function: ^json /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/express/lib/response.js:250:25
+      2  100.0%          Function: ^<anonymous> /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/dist/main.js:1:10075
+      2  100.0%            Function: ^handle /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/express/lib/router/layer.js:86:49
+      1    2.6%      LazyCompile: ~trimControlChars /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/whatwg-url/lib/url-state-machine.js:445:26
+      1  100.0%        LazyCompile: ~URLStateMachine /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/whatwg-url/lib/url-state-machine.js:481:25
+      1  100.0%          LazyCompile: ~module.exports.basicURLParse /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/whatwg-url/lib/url-state-machine.js:1206:41
+      1  100.0%            LazyCompile: ~URLImpl /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/whatwg-url/lib/URL-impl.js:7:14
+      1    2.6%      LazyCompile: ~merge /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/merge-descriptors/index.js:34:15
+      1  100.0%        LazyCompile: ~createApplication /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/express/lib/express.js:37:27
+      1  100.0%          LazyCompile: ~728 /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/dist/main.js:1:13061
+      1  100.0%            Function: ~r /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/dist/main.js:1:30777
+      1    2.6%      LazyCompile: ~match /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/express/lib/router/layer.js:110:39
+      1  100.0%        LazyCompile: ~matchLayer /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/express/lib/router/index.js:583:20
+      1  100.0%          LazyCompile: ~next /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/express/lib/router/index.js:177:16
+      1  100.0%            LazyCompile: ~strategy.pass /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/passport/lib/middleware/authenticate.js:345:31
+      1    2.6%      LazyCompile: ~isIPv6 node:internal/net:35:16
+      1  100.0%        LazyCompile: ~isIP node:internal/net:39:14
+      1  100.0%          LazyCompile: ~parseSslOptions /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/mongodb/lib/cmap/connect.js:237:25
+      1  100.0%            LazyCompile: ~makeConnection /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/mongodb/lib/cmap/connect.js:256:24
+      1    2.6%      LazyCompile: ~getStack /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/depd/index.js:381:19
+      1  100.0%        LazyCompile: ~depd /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/depd/index.js:103:15
+      1  100.0%          Function: ~<anonymous> /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/body-parser/index.js:1:1
+      1  100.0%            LazyCompile: ~Module._compile node:internal/modules/cjs/loader:1080:37
+      1    2.6%      LazyCompile: ~deserializeObject /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/bson/lib/parser/deserializer.js:65:27
+      1  100.0%        LazyCompile: ~deserialize /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/bson/lib/parser/deserializer.js:36:21
+      1  100.0%          LazyCompile: ~deserialize /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/bson/lib/bson.js:161:21
+      1  100.0%            LazyCompile: ~parse /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/mongodb/lib/cmap/commands.js:222:10
+      1    2.6%      LazyCompile: ~compressible /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/compressible/index.js:41:23
+      1  100.0%        LazyCompile: ~shouldCompress /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/compression/index.js:254:25
+      1  100.0%          LazyCompile: ~onResponseHeaders /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/compression/index.js:140:47
+      1  100.0%            LazyCompile: ~writeHead /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/on-headers/index.js:28:29
+      1    2.6%      LazyCompile: ~checkCollectionName /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/mongodb/lib/utils.js:23:29
+      1  100.0%        LazyCompile: ~Collection /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/mongodb/lib/collection.js:66:16
+      1  100.0%          LazyCompile: ~collection /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/mongodb/lib/db.js:192:15
+      1  100.0%            LazyCompile: ~NativeCollection.onOpen /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/mongoose/lib/drivers/node-mongodb-native/collection.js:45:45
+      1    2.6%      LazyCompile: ~URL node:internal/url:632:14
+      1  100.0%        LazyCompile: ~pathToFileURL node:internal/url:1472:23
+      1  100.0%          Function: ^resolveExports node:internal/modules/cjs/loader:483:24
+      1  100.0%            Function: ^Module._findPath node:internal/modules/cjs/loader:505:28
+      1    2.6%      LazyCompile: ~Kareem.post /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/kareem/index.js:466:33
+      1  100.0%        LazyCompile: ~Schema.post /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/mongoose/lib/schema.js:1686:33
+      1  100.0%          LazyCompile: ~shardingPlugin /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/mongoose/lib/plugins/sharding.js:10:41
+      1  100.0%            LazyCompile: ~Schema.plugin /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/mongoose/lib/schema.js:1728:35
+      1    2.6%      LazyCompile: ~CaseInsensitiveMap /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/mongodb/lib/connection_string.js:188:16
+      1  100.0%        Function: ~<anonymous> /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/mongodb/lib/connection_string.js:1:1
+      1  100.0%          Function: ^Module._compile node:internal/modules/cjs/loader:1080:37
+      1  100.0%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1135:37
+      1    2.6%      LazyCompile: ~Bitfield /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/sparse-bitfield/index.js:5:19
+      1  100.0%        LazyCompile: ~Bitfield /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/sparse-bitfield/index.js:5:19
+      1  100.0%          LazyCompile: ~read /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/saslprep/lib/memory-code-points.js:15:14
+      1  100.0%            Function: ~<anonymous> /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/saslprep/lib/memory-code-points.js:1:1
+      1    2.6%      LazyCompile: ~<anonymous> /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/color/node_modules/color-convert/index.js:61:25
+      1  100.0%        t node::(anonymous namespace)::BindingData::~BindingData()
+      1  100.0%          Function: ~<anonymous> /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/color/node_modules/color-convert/index.js:1:1
+      1  100.0%            Function: ^Module._compile node:internal/modules/cjs/loader:1080:37
+      1    2.6%      LazyCompile: *next /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/express/lib/router/index.js:177:16
+      1  100.0%        Function: ^strategy.pass /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/passport/lib/middleware/authenticate.js:345:31
+      1  100.0%          Function: ^SessionStrategy.authenticate /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/passport/lib/strategies/session.js:45:50
+      1  100.0%            Function: ^attempt /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/passport/lib/middleware/authenticate.js:180:22
+      1    2.6%      Function: ^updateChildren node:internal/modules/cjs/loader:165:24
+      1  100.0%        Function: ^Module._load node:internal/modules/cjs/loader:771:24
+      1  100.0%          Function: ^Module.require node:internal/modules/cjs/loader:1020:36
+      1  100.0%            Function: ^require node:internal/modules/cjs/helpers:101:31
+      1    2.6%      Function: ^stat node:internal/modules/cjs/loader:151:14
+      1  100.0%        Function: ^tryFile node:internal/modules/cjs/loader:395:17
+      1  100.0%          Function: ^tryExtensions node:internal/modules/cjs/loader:411:23
+      1  100.0%            Function: ^Module._findPath node:internal/modules/cjs/loader:505:28
+      1    2.6%      Function: ^setHeader node:_http_outgoing:601:57
+      1  100.0%        Function: ^header /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/express/lib/response.js:777:29
+      1  100.0%          Function: ^send /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/express/lib/response.js:111:25
+      1  100.0%            Function: ^json /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/express/lib/response.js:250:25
+      1    2.6%      Function: ^resolve node:path:1091:10
+      1  100.0%        Function: ^readPackage node:internal/modules/cjs/loader:301:21
+      1  100.0%          Function: ^readPackageScope node:internal/modules/cjs/loader:332:26
+      1  100.0%            LazyCompile: ~trySelf node:internal/modules/cjs/loader:452:17
+      1    2.6%      Function: ^readPackage node:internal/modules/cjs/loader:301:21
+      1  100.0%        Function: ^readPackageScope node:internal/modules/cjs/loader:332:26
+      1  100.0%          Function: ^Module._extensions..js node:internal/modules/cjs/loader:1135:37
+      1  100.0%            Function: ^Module.load node:internal/modules/cjs/loader:992:33
+      1    2.6%      Function: ^pathtoRegexp /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/path-to-regexp/index.js:28:22
+      1  100.0%        Function: ^Layer /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/express/lib/router/layer.js:33:15
+      1  100.0%          LazyCompile: ~use /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/express/lib/router/index.js:439:25
+      1  100.0%            LazyCompile: ~<anonymous> /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/express/lib/application.js:224:24
+      1    2.6%      Function: ^getHeader node:_http_outgoing:647:57
+      1  100.0%        Function: ^res.get /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/express/lib/response.js:811:19
+      1  100.0%          Function: ^send /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/express/lib/response.js:111:25
+      1  100.0%            Function: ^json /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/express/lib/response.js:250:25
+      1    2.6%      Function: ^format /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/content-type/index.js:65:17
+      1  100.0%        Function: ^setCharset /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/express/lib/utils.js:248:41
+      1  100.0%          Function: ^send /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/express/lib/response.js:111:25
+      1  100.0%            Function: ^json /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/express/lib/response.js:250:25
+      1    2.6%      Function: ^expressInit /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/express/lib/middleware/init.js:29:30
+      1  100.0%        LazyCompile: *trim_prefix /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/express/lib/router/index.js:293:23
+      1  100.0%          LazyCompile: *next /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/express/lib/router/index.js:177:16
+      1  100.0%            Function: ^query /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/express/lib/middleware/query.js:39:24
+      1    2.6%      Function: ^deserializeObject /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/bson/lib/parser/deserializer.js:65:27
+      1  100.0%        LazyCompile: ~deserialize /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/bson/lib/parser/deserializer.js:36:21
+      1  100.0%          LazyCompile: ~deserialize /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/bson/lib/bson.js:161:21
+      1  100.0%            LazyCompile: ~parse /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/mongodb/lib/cmap/commands.js:426:10
+      1    2.6%      Function: ^checkInvalidHeaderChar node:_http_common:231:32
+      1  100.0%        Function: ^<anonymous> node:_http_outgoing:577:45
+      1  100.0%          Function: ^setHeader node:_http_outgoing:601:57
+      1  100.0%            Function: ^header /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/express/lib/response.js:777:29
+      1    2.6%      Function: ^_addHeaderLine node:_http_incoming:382:24
+      1  100.0%        Function: ^get node:_http_incoming:112:16
+      1  100.0%          Function: ^parserOnIncoming node:_http_server:880:26
+      1  100.0%            Function: ^parserOnHeadersComplete node:_http_common:77:33
+      1    2.6%      Function: ^Module._findPath node:internal/modules/cjs/loader:505:28
+      1  100.0%        Function: ^Module._resolveFilename node:internal/modules/cjs/loader:865:35
+      1  100.0%          Function: ^Module._load node:internal/modules/cjs/loader:771:24
+      1  100.0%            Function: ^Module.require node:internal/modules/cjs/loader:1020:36
+      1    2.6%      Function: ^FastBuffer node:internal/buffer:958:14
+      1  100.0%        Function: ^randomBytes node:internal/crypto/random:93:21
+      1  100.0%          Function: ^randomBytesSync /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/random-bytes/index.js:72:25
+      1  100.0%            Function: ^uidSync /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/uid-safe/index.js:75:18
+     22    3.0%    Function: ^memoryUsage node:internal/process/per_thread:169:23
+     22  100.0%      Function: ^<anonymous> /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/dist/main.js:1:10075
+     22  100.0%        Function: ^handle /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/express/lib/router/layer.js:86:49
+     22  100.0%          Function: ^next /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/express/lib/router/route.js:116:16
+     22  100.0%            Function: ^dispatch /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/express/lib/router/route.js:98:45
+     18    2.5%    Function: ^writevGeneric node:internal/stream_base_commons:122:23
+     18  100.0%      Function: ^Socket._writeGeneric node:net:848:42
+     18  100.0%        Function: ^Socket._writev node:net:880:36
+     18  100.0%          Function: ^doWrite node:internal/streams/writable:400:17
+     18  100.0%            Function: ^clearBuffer node:internal/streams/writable:531:21
+     17    2.4%    LazyCompile: ~compileForInternalLoader node:internal/bootstrap/loaders:316:27
+     16   94.1%      Function: ^nativeModuleRequire node:internal/bootstrap/loaders:349:29
+      3   18.8%        LazyCompile: ~initializeCJSLoader node:internal/bootstrap/pre_execution:521:29
+      3  100.0%          LazyCompile: ~prepareMainThreadExecution node:internal/bootstrap/pre_execution:29:36
+      3  100.0%            Function: ~<anonymous> node:internal/main/run_main_module:1:1
+      3   18.8%        Function: ~<anonymous> node:internal/modules/esm/loader:1:1
+      3  100.0%          LazyCompile: ~compileForInternalLoader node:internal/bootstrap/loaders:316:27
+      3  100.0%            Function: ^nativeModuleRequire node:internal/bootstrap/loaders:349:29
+      3   18.8%        Function: ~<anonymous> node:internal/modules/esm/fetch_module:1:1
+      3  100.0%          LazyCompile: ~compileForInternalLoader node:internal/bootstrap/loaders:316:27
+      3  100.0%            Function: ^nativeModuleRequire node:internal/bootstrap/loaders:349:29
+      2   12.5%        Function: ~<anonymous> node:internal/process/esm_loader:1:1
+      2  100.0%          LazyCompile: ~compileForInternalLoader node:internal/bootstrap/loaders:316:27
+      2  100.0%            Function: ^nativeModuleRequire node:internal/bootstrap/loaders:349:29
+      1    6.3%        LazyCompile: ~initializeSourceMapsHandlers node:internal/bootstrap/pre_execution:560:38
+      1  100.0%          LazyCompile: ~prepareMainThreadExecution node:internal/bootstrap/pre_execution:29:36
+      1  100.0%            Function: ~<anonymous> node:internal/main/run_main_module:1:1
+      1    6.3%        LazyCompile: ~initializeReport node:internal/bootstrap/pre_execution:278:26
+      1  100.0%          LazyCompile: ~prepareMainThreadExecution node:internal/bootstrap/pre_execution:29:36
+      1  100.0%            Function: ~<anonymous> node:internal/main/run_main_module:1:1
+      1    6.3%        Function: ~<anonymous> node:net:1:1
+      1  100.0%          LazyCompile: ~compileForInternalLoader node:internal/bootstrap/loaders:316:27
+      1  100.0%            Function: ^nativeModuleRequire node:internal/bootstrap/loaders:349:29
+      1    6.3%        Function: ~<anonymous> node:internal/modules/esm/module_map:1:1
+      1  100.0%          LazyCompile: ~compileForInternalLoader node:internal/bootstrap/loaders:316:27
+      1  100.0%            Function: ^nativeModuleRequire node:internal/bootstrap/loaders:349:29
+      1    6.3%        Function: ~<anonymous> node:internal/modules/esm/get_format:1:1
+      1  100.0%          LazyCompile: ~compileForInternalLoader node:internal/bootstrap/loaders:316:27
+      1  100.0%            Function: ^nativeModuleRequire node:internal/bootstrap/loaders:349:29
+      1    5.9%      LazyCompile: ~nativeModuleRequire node:internal/bootstrap/loaders:349:29
+      1  100.0%        Function: ~<anonymous> node:internal/main/run_main_module:1:1
+     14    1.9%    Function: ^initialize /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/passport/lib/middleware/initialize.js:51:29
+      7   50.0%      LazyCompile: *trim_prefix /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/express/lib/router/index.js:293:23
+      7  100.0%        LazyCompile: *next /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/express/lib/router/index.js:177:16
+      7  100.0%          Function: ^session /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/express-session/index.js:179:26
+      7  100.0%            LazyCompile: *trim_prefix /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/express/lib/router/index.js:293:23
+      7   50.0%      Function: ^handle /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/express/lib/router/layer.js:86:49
+      7  100.0%        Function: ^trim_prefix /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/express/lib/router/index.js:293:23
+      6   85.7%          LazyCompile: *next /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/express/lib/router/index.js:177:16
+      6  100.0%            Function: ^session /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/express-session/index.js:179:26
+      1   14.3%          Function: ^<anonymous> /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/express/lib/router/index.js:280:64
+      1  100.0%            Function: ^process_params /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/express/lib/router/index.js:338:47
+     10    1.4%    Function: ^compression /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/compression/index.js:59:31
+      6   60.0%      LazyCompile: *trim_prefix /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/express/lib/router/index.js:293:23
+      6  100.0%        LazyCompile: *next /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/express/lib/router/index.js:177:16
+      6  100.0%          Function: ^expressInit /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/express/lib/middleware/init.js:29:30
+      6  100.0%            LazyCompile: *trim_prefix /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/express/lib/router/index.js:293:23
+      4   40.0%      Function: ^handle /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/express/lib/router/layer.js:86:49
+      4  100.0%        Function: ^trim_prefix /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/express/lib/router/index.js:293:23
+      3   75.0%          LazyCompile: *next /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/express/lib/router/index.js:177:16
+      3  100.0%            Function: ^expressInit /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/express/lib/middleware/init.js:29:30
+      1   25.0%          Function: ^<anonymous> /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/express/lib/router/index.js:280:64
+      1  100.0%            Function: ^process_params /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/express/lib/router/index.js:338:47
+
+    351   19.1%  T node::contextify::ContextifyContext::CompileFunction(v8::FunctionCallbackInfo<v8::Value> const&)
+    346   98.6%    Function: ^compileFunction node:vm:316:25
+    343   99.1%      Function: ^wrapSafe node:internal/modules/cjs/loader:1040:18
+    341   99.4%        Function: ^Module._compile node:internal/modules/cjs/loader:1080:37
+    327   95.9%          Function: ^Module._extensions..js node:internal/modules/cjs/loader:1135:37
+    327  100.0%            Function: ^Module.load node:internal/modules/cjs/loader:992:33
+     14    4.1%          LazyCompile: ~Module._extensions..js node:internal/modules/cjs/loader:1135:37
+     14  100.0%            Function: ^Module.load node:internal/modules/cjs/loader:992:33
+      5    1.4%    LazyCompile: ~compileFunction node:vm:316:25
+      5  100.0%      LazyCompile: ~wrapSafe node:internal/modules/cjs/loader:1040:18
+      5  100.0%        LazyCompile: ~Module._compile node:internal/modules/cjs/loader:1080:37
+      5  100.0%          LazyCompile: ~Module._extensions..js node:internal/modules/cjs/loader:1135:37
+      5  100.0%            LazyCompile: ~Module.load node:internal/modules/cjs/loader:992:33
+
+    256   14.0%  T _posix_spawnattr_setflags
+
+     81    4.4%  t node::fs::Read(v8::FunctionCallbackInfo<v8::Value> const&)
+     80   98.8%    Function: ^readSync node:fs:699:18
+     80  100.0%      Function: ^tryReadSync node:fs:438:21
+     80  100.0%        Function: ^readFileSync node:fs:459:22
+     77   96.3%          Function: ^Module._extensions..js node:internal/modules/cjs/loader:1135:37
+     77  100.0%            Function: ^Module.load node:internal/modules/cjs/loader:992:33
+      2    2.5%          LazyCompile: ~Module._extensions..js node:internal/modules/cjs/loader:1135:37
+      2  100.0%            Function: ^Module.load node:internal/modules/cjs/loader:992:33
+      1    1.3%          LazyCompile: ~Module._extensions..json node:internal/modules/cjs/loader:1185:39
+      1  100.0%            Function: ^Module.load node:internal/modules/cjs/loader:992:33
+      1    1.2%    LazyCompile: ~readSync node:fs:699:18
+      1  100.0%      LazyCompile: ~tryReadSync node:fs:438:21
+      1  100.0%        LazyCompile: ~readFileSync node:fs:459:22
+      1  100.0%          LazyCompile: ~Module._extensions..js node:internal/modules/cjs/loader:1135:37
+      1  100.0%            LazyCompile: ~Module.load node:internal/modules/cjs/loader:992:33
+
+     49    2.7%  /usr/lib/system/libsystem_kernel.dylib
+     47   95.9%    LazyCompile: *cpus node:os:133:14
+     47  100.0%      Function: ^<anonymous> /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/dist/main.js:1:10075
+     47  100.0%        Function: ^handle /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/express/lib/router/layer.js:86:49
+     47  100.0%          Function: ^next /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/express/lib/router/route.js:116:16
+     47  100.0%            Function: ^dispatch /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/express/lib/router/route.js:98:45
+
+     34    1.9%  UNKNOWN
+     26   76.5%    LazyCompile: *cpus node:os:133:14
+     26  100.0%      Function: ^<anonymous> /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/dist/main.js:1:10075
+     26  100.0%        Function: ^handle /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/express/lib/router/layer.js:86:49
+     26  100.0%          Function: ^next /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/express/lib/router/route.js:116:16
+     26  100.0%            Function: ^dispatch /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/express/lib/router/route.js:98:45
+      1    2.9%    LazyCompile: ~toJSON /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/express-session/session/cookie.js:147:19
+      1  100.0%      t node::(anonymous namespace)::BindingData::~BindingData()
+      1  100.0%        LazyCompile: ~hash /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/express-session/index.js:596:14
+      1  100.0%          LazyCompile: ~generate /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/express-session/index.js:363:22
+      1  100.0%            LazyCompile: ~session /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/express-session/index.js:179:26
+      1    2.9%    LazyCompile: ~stringifyFnReplacer /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/safe-stable-stringify/index.js:230:32
+      1  100.0%      LazyCompile: ~stringify /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/safe-stable-stringify/index.js:649:22
+      1  100.0%        LazyCompile: ~<anonymous> /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/logform/json.js:26:25
+      1  100.0%          LazyCompile: ~_transform /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/winston/lib/winston/logger.js:275:13
+      1  100.0%            LazyCompile: ~Transform._read /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/readable-stream/lib/_stream_transform.js:171:38
+      1    2.9%    LazyCompile: ~process_params /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/express/lib/router/index.js:338:47
+      1  100.0%      LazyCompile: ~next /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/express/lib/router/index.js:177:16
+      1  100.0%        LazyCompile: ~handle /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/express/lib/router/index.js:136:31
+      1  100.0%          LazyCompile: ~handle /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/express/lib/application.js:165:29
+      1  100.0%            LazyCompile: ~app /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/express/lib/express.js:38:21
+      1    2.9%    LazyCompile: ~onMessage /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/mongodb/lib/cmap/connection.js:156:14
+      1  100.0%      Function: ^<anonymous> /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/mongodb/lib/cmap/connection.js:60:44
+      1  100.0%        Function: ^emit node:events:460:44
+      1  100.0%          LazyCompile: ~processIncomingData /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/mongodb/lib/cmap/message_stream.js:84:29
+      1  100.0%            Function: ^_write /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/mongodb/lib/cmap/message_stream.js:31:11
+      1    2.9%    LazyCompile: ~<anonymous> /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/mongodb/lib/connection_string.js:72:39
+      1  100.0%      LazyCompile: ~onresolve node:dns:273:19
+      1    2.9%    Function: ~<anonymous> /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/readable-stream/lib/internal/streams/buffer_list.js:1:1
+      1  100.0%      Function: ^Module._compile node:internal/modules/cjs/loader:1080:37
+      1  100.0%        Function: ^Module._extensions..js node:internal/modules/cjs/loader:1135:37
+      1  100.0%          Function: ^Module.load node:internal/modules/cjs/loader:992:33
+      1  100.0%            Function: ^Module._load node:internal/modules/cjs/loader:771:24
+      1    2.9%    Function: ^isUint32 node:internal/validators:41:18
+      1  100.0%      Function: ^readFileSync node:fs:459:22
+      1  100.0%        Function: ^Module._extensions..js node:internal/modules/cjs/loader:1135:37
+      1  100.0%          Function: ^Module.load node:internal/modules/cjs/loader:992:33
+      1  100.0%            Function: ^Module._load node:internal/modules/cjs/loader:771:24
+
+     31    1.7%  T _sigprocmask
+      1    3.2%    LazyCompile: ~value node:internal/console/constructor:230:20
+      1  100.0%      LazyCompile: ~initializeGlobalConsole node:internal/console/constructor:687:33
+      1  100.0%        LazyCompile: ~patchProcessObject node:internal/bootstrap/pre_execution:103:28
+      1  100.0%          LazyCompile: ~prepareMainThreadExecution node:internal/bootstrap/pre_execution:29:36
+      1  100.0%            Function: ~<anonymous> node:internal/main/run_main_module:1:1
+      1    3.2%    LazyCompile: ~uidSync /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/uid-safe/index.js:75:18
+      1  100.0%      LazyCompile: ~generateSessionId /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/express-session/index.js:518:27
+      1  100.0%        LazyCompile: ~store.generate /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/express-session/index.js:158:28
+      1  100.0%          LazyCompile: ~generate /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/express-session/index.js:363:22
+      1  100.0%            LazyCompile: ~session /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/express-session/index.js:179:26
+      1    3.2%    LazyCompile: ~realpathSync node:fs:2460:22
+      1  100.0%      LazyCompile: ~toRealPath node:internal/modules/cjs/loader:404:20
+      1  100.0%        LazyCompile: ~Module._findPath node:internal/modules/cjs/loader:505:28
+      1  100.0%          LazyCompile: ~resolveMainPath node:internal/modules/run_main:15:25
+      1  100.0%            LazyCompile: ~executeUserEntryPoint node:internal/modules/run_main:74:31
+      1    3.2%    LazyCompile: ~processPromiseRejections node:internal/process/promises:211:34
+      1  100.0%      Function: ^processTicksAndRejections node:internal/process/task_queues:68:35
+      1    3.2%    LazyCompile: ~onConnectSecure node:_tls_wrap:1521:25
+      1  100.0%      LazyCompile: *emit node:events:460:44
+      1  100.0%        Function: ^TLSSocket._finishInit node:_tls_wrap:923:43
+      1  100.0%          Function: ^ssl.onhandshakedone node:_tls_wrap:728:27
+      1    3.2%    LazyCompile: ~module.exports /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/winston/lib/winston/create-logger.js:25:27
+      1  100.0%      Function: ~<anonymous> /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/winston/lib/winston.js:1:1
+      1  100.0%        Function: ^Module._compile node:internal/modules/cjs/loader:1080:37
+      1  100.0%          Function: ^Module._extensions..js node:internal/modules/cjs/loader:1135:37
+      1  100.0%            Function: ^Module.load node:internal/modules/cjs/loader:992:33
+      1    3.2%    LazyCompile: ~handle /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/express/lib/router/layer.js:86:49
+      1  100.0%      LazyCompile: ~trim_prefix /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/express/lib/router/index.js:293:23
+      1  100.0%        LazyCompile: ~<anonymous> /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/express/lib/router/index.js:280:64
+      1  100.0%          LazyCompile: ~process_params /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/express/lib/router/index.js:338:47
+      1  100.0%            LazyCompile: ~next /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/express/lib/router/index.js:177:16
+      1    3.2%    LazyCompile: ~destroy node:internal/streams/destroy:32:17
+      1  100.0%      Function: ^endReadableNT node:internal/streams/readable:1351:23
+      1  100.0%        Function: ^processTicksAndRejections node:internal/process/task_queues:68:35
+      1    3.2%    LazyCompile: ~defaultTriggerAsyncIdScope node:internal/async_hooks:455:36
+      1  100.0%      LazyCompile: ~emitLookup node:net:1133:46
+      1  100.0%        LazyCompile: ~onlookup node:dns:107:18
+      1    3.2%    LazyCompile: ~connectionIsStale /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/mongodb/lib/cmap/connection_pool.js:313:22
+      1  100.0%      LazyCompile: ~checkIn /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/mongodb/lib/cmap/connection_pool.js:175:12
+      1  100.0%        LazyCompile: ~<anonymous> /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/mongodb/lib/cmap/connection_pool.js:293:27
+      1  100.0%          LazyCompile: ~<anonymous> /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/mongodb/lib/sdam/server.js:210:101
+      1  100.0%            LazyCompile: ~handleOperationResult /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/mongodb/lib/sdam/server.js:282:42
+      1    3.2%    LazyCompile: ~connect node:_tls_wrap:1602:35
+      1  100.0%      LazyCompile: ~makeConnection /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/mongodb/lib/cmap/connect.js:256:24
+      1  100.0%        Function: ^connect /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/mongodb/lib/cmap/connect.js:30:17
+      1  100.0%          LazyCompile: ~createConnection /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/mongodb/lib/cmap/connection_pool.js:335:21
+      1  100.0%            LazyCompile: ~processWaitQueue /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/mongodb/lib/cmap/connection_pool.js:406:21
+      1    3.2%    LazyCompile: ~connect /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/mongodb/lib/sdam/topology.js:154:12
+      1  100.0%      LazyCompile: ~createTopology /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/mongodb/lib/operations/connect.js:44:24
+      1  100.0%        LazyCompile: ~<anonymous> /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/mongodb/lib/operations/connect.js:32:67
+      1  100.0%          LazyCompile: ~<anonymous> /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/mongodb/lib/connection_string.js:72:39
+      1  100.0%            LazyCompile: ~onresolve node:dns:273:19
+      1    3.2%    LazyCompile: ~allocate node:buffer:403:18
+      1  100.0%      Function: ^allocUnsafe node:buffer:378:42
+      1  100.0%        Function: ^tryCreateBuffer node:fs:423:25
+      1  100.0%          Function: ^readFileSync node:fs:459:22
+      1  100.0%            LazyCompile: ~Module._extensions..js node:internal/modules/cjs/loader:1135:37
+      1    3.2%    LazyCompile: ~Socket.setKeepAlive node:net:548:41
+      1  100.0%      LazyCompile: ~makeConnection /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/mongodb/lib/cmap/connect.js:256:24
+      1  100.0%        LazyCompile: ~connect /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/mongodb/lib/cmap/connect.js:30:17
+      1  100.0%          LazyCompile: ~checkServer /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/mongodb/lib/sdam/monitor.js:143:21
+      1  100.0%            LazyCompile: ~<anonymous> /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/mongodb/lib/sdam/monitor.js:229:12
+      1    3.2%    LazyCompile: ~SchemaStringOptions /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/mongoose/lib/options/SchemaStringOptions.js:18:1
+      1  100.0%      LazyCompile: ~SchemaType /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/mongoose/lib/schematype.js:42:20
+      1  100.0%        LazyCompile: ~SchemaString /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/mongoose/lib/schema/string.js:25:22
+      1  100.0%          LazyCompile: ~Schema.interpretAsType /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/mongoose/lib/schema.js:1100:44
+      1  100.0%            LazyCompile: ~Schema.path /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/mongoose/lib/schema.js:832:33
+      1    3.2%    LazyCompile: ~Mongoose._model /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/mongoose/lib/index.js:581:37
+      1  100.0%      LazyCompile: ~Mongoose.model /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/mongoose/lib/index.js:510:36
+      1  100.0%        LazyCompile: ~e.default /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/dist/main.js:1:19118
+      1  100.0%          LazyCompile: ~l /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/dist/main.js:1:28478
+      1  100.0%            LazyCompile: ~999 /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/dist/main.js:1:29437
+      1    3.2%    LazyCompile: ~Db /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/mongodb/lib/db.js:81:16
+      1  100.0%      LazyCompile: ~db /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/mongodb/lib/mongo_client.js:214:7
+      1  100.0%        LazyCompile: ~<anonymous> /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/connect-mongo/build/main/lib/MongoStore.js:124:42
+      1  100.0%          t node::(anonymous namespace)::BindingData::~BindingData()
+      1  100.0%            Function: ^processTicksAndRejections node:internal/process/task_queues:68:35
+      1    3.2%    LazyCompile: ~Authenticator.init /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/passport/lib/authenticator.js:29:40
+      1  100.0%      LazyCompile: ~Authenticator /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/passport/lib/authenticator.js:13:23
+      1  100.0%        Function: ~<anonymous> /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/passport/lib/index.js:1:1
+      1  100.0%          Function: ^Module._compile node:internal/modules/cjs/loader:1080:37
+      1  100.0%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1135:37
+      1    3.2%    LazyCompile: *emit node:events:460:44
+      1  100.0%      Function: ^endReadableNT node:internal/streams/readable:1351:23
+      1  100.0%        LazyCompile: *processTicksAndRejections node:internal/process/task_queues:68:35
+      1    3.2%    Function: ~<anonymous> /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/connect-mongo/build/main/index.js:1:1
+      1  100.0%      Function: ^Module._compile node:internal/modules/cjs/loader:1080:37
+      1  100.0%        Function: ^Module._extensions..js node:internal/modules/cjs/loader:1135:37
+      1  100.0%          Function: ^Module.load node:internal/modules/cjs/loader:992:33
+      1  100.0%            Function: ^Module._load node:internal/modules/cjs/loader:771:24
+
+     29    1.6%  /usr/lib/system/libsystem_malloc.dylib
+      5   17.2%    LazyCompile: *cpus node:os:133:14
+      5  100.0%      Function: ^<anonymous> /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/dist/main.js:1:10075
+      5  100.0%        Function: ^handle /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/express/lib/router/layer.js:86:49
+      5  100.0%          Function: ^next /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/express/lib/router/route.js:116:16
+      5  100.0%            Function: ^dispatch /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/express/lib/router/route.js:98:45
+      3   10.3%    t node::(anonymous namespace)::BindingData::~BindingData()
+      2   66.7%      Function: ^FastBuffer node:internal/buffer:958:14
+      2  100.0%        Function: ^createUnsafeBuffer node:internal/buffer:1059:28
+      2  100.0%          Function: ^allocate node:buffer:403:18
+      2  100.0%            Function: ^allocUnsafe node:buffer:378:42
+      1   33.3%      Function: ^realpathSync node:fs:2460:22
+      1  100.0%        Function: ^toRealPath node:internal/modules/cjs/loader:404:20
+      1  100.0%          Function: ^Module._findPath node:internal/modules/cjs/loader:505:28
+      1  100.0%            Function: ^Module._resolveFilename node:internal/modules/cjs/loader:865:35
+      1    3.4%    LazyCompile: ~write /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/mongodb/lib/cmap/connection.js:403:15
+      1  100.0%      LazyCompile: ~command /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/mongodb/lib/cmap/connection.js:251:12
+      1  100.0%        LazyCompile: ~<anonymous> /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/mongodb/lib/sdam/server.js:204:42
+      1  100.0%          LazyCompile: ~<anonymous> /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/mongodb/lib/cmap/connection_pool.js:291:23
+      1  100.0%            LazyCompile: ~processWaitQueue /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/mongodb/lib/cmap/connection_pool.js:406:21
+      1    3.4%    LazyCompile: ~socketOnDrain node:_http_server:587:23
+      1  100.0%      Function: ^updateOutgoingData node:_http_server:582:28
+      1  100.0%        Function: ^_flushOutput node:_http_outgoing:1030:63
+      1  100.0%          Function: ^_writeRaw node:_http_outgoing:354:19
+      1  100.0%            Function: ^_send node:_http_outgoing:329:49
+      1    3.4%    LazyCompile: ~parse /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/mongodb/lib/cmap/commands.js:222:10
+      1  100.0%      Function: ^onMessage /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/mongodb/lib/cmap/connection.js:156:14
+      1  100.0%        Function: ^<anonymous> /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/mongodb/lib/cmap/connection.js:60:44
+      1  100.0%          Function: ^emit node:events:460:44
+      1  100.0%            Function: ^processIncomingData /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/mongodb/lib/cmap/message_stream.js:84:29
+      1    3.4%    LazyCompile: ~onResponseHeaders /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/compression/index.js:140:47
+      1  100.0%      LazyCompile: ~writeHead /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/on-headers/index.js:28:29
+      1  100.0%        LazyCompile: ~writeHead /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/on-headers/index.js:28:29
+      1  100.0%          LazyCompile: ~_implicitHeader node:_http_server:287:68
+      1  100.0%            LazyCompile: ~end /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/compression/index.js:92:28
+      1    3.4%    LazyCompile: ~nextTick node:internal/process/task_queues:104:18
+      1  100.0%      LazyCompile: ~onwrite /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/readable-stream/lib/_stream_writable.js:444:17
+      1  100.0%        LazyCompile: ~WritableState.onwrite /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/readable-stream/lib/_stream_writable.js:159:27
+      1  100.0%          LazyCompile: ~afterTransform /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/readable-stream/lib/_stream_transform.js:76:24
+      1  100.0%            LazyCompile: ~PassThrough._transform /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/readable-stream/lib/_stream_passthrough.js:37:45
+      1    3.4%    LazyCompile: ~_isUint8Array /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/readable-stream/lib/_stream_writable.js:78:23
+      1  100.0%      Function: ^Writable.write /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/readable-stream/lib/_stream_writable.js:288:37
+      1  100.0%        LazyCompile: ~log /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/winston/lib/winston/transports/file.js:117:6
+      1  100.0%          Function: ^_write /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/winston-transport/index.js:69:51
+      1  100.0%            Function: ^doWrite /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/readable-stream/lib/_stream_writable.js:404:17
+      1    3.4%    LazyCompile: ~Server.listen node:net:1513:35
+      1  100.0%      LazyCompile: ~listen /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/express/lib/application.js:633:29
+      1  100.0%        LazyCompile: ~<anonymous> /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/dist/main.js:1:14506
+      1  100.0%          t node::(anonymous namespace)::BindingData::~BindingData()
+      1  100.0%            LazyCompile: ~e.createServer /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/dist/main.js:1:14490
+      1    3.4%    LazyCompile: ~Module._findPath node:internal/modules/cjs/loader:505:28
+      1  100.0%      LazyCompile: ~Module._resolveFilename node:internal/modules/cjs/loader:865:35
+      1  100.0%        LazyCompile: ~Module._load node:internal/modules/cjs/loader:771:24
+      1  100.0%          LazyCompile: ~Module.require node:internal/modules/cjs/loader:1020:36
+      1  100.0%            LazyCompile: ~require node:internal/modules/cjs/helpers:101:31
+      1    3.4%    LazyCompile: ~Module._extensions..json node:internal/modules/cjs/loader:1185:39
+      1  100.0%      LazyCompile: ~Module.load node:internal/modules/cjs/loader:992:33
+      1  100.0%        LazyCompile: ~Module._load node:internal/modules/cjs/loader:771:24
+      1  100.0%          Function: ^Module.require node:internal/modules/cjs/loader:1020:36
+      1  100.0%            Function: ^require node:internal/modules/cjs/helpers:101:31
+      1    3.4%    LazyCompile: ~Collection /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/mongodb/lib/collection.js:66:16
+      1  100.0%      LazyCompile: ~collection /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/mongodb/lib/db.js:192:15
+      1  100.0%        LazyCompile: ~<anonymous> /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/connect-mongo/build/main/lib/MongoStore.js:124:42
+      1  100.0%          t node::(anonymous namespace)::BindingData::~BindingData()
+      1  100.0%            Function: ^processTicksAndRejections node:internal/process/task_queues:68:35
+      1    3.4%    Function: ^handle /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/express/lib/application.js:165:29
+      1  100.0%      Function: ^app /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/express/lib/express.js:38:21
+      1  100.0%        LazyCompile: *emit node:events:460:44
+      1  100.0%          Function: ^parserOnIncoming node:_http_server:880:26
+      1  100.0%            Function: ^parserOnHeadersComplete node:_http_common:77:33
+      1    3.4%    Function: ^<anonymous> /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/express/lib/request.js:467:36
+      1  100.0%      LazyCompile: ~send /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/express/lib/response.js:111:25
+      1  100.0%        Function: ^json /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/express/lib/response.js:250:25
+      1  100.0%          Function: ^<anonymous> /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/dist/main.js:1:10075
+      1  100.0%            Function: ^handle /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/express/lib/router/layer.js:86:49
+
+     26    1.4%  /usr/lib/system/libsystem_pthread.dylib
+      2    7.7%    LazyCompile: ~toRealPath node:internal/modules/cjs/loader:404:20
+      2  100.0%      LazyCompile: ~Module._findPath node:internal/modules/cjs/loader:505:28
+      2  100.0%        LazyCompile: ~resolveMainPath node:internal/modules/run_main:15:25
+      2  100.0%          LazyCompile: ~executeUserEntryPoint node:internal/modules/run_main:74:31
+      2  100.0%            Function: ~<anonymous> node:internal/main/run_main_module:1:1
+      2    7.7%    Function: ~<anonymous> node:internal/fs/promises:1:1
+      2  100.0%      Function: ^compileForInternalLoader node:internal/bootstrap/loaders:316:27
+      2  100.0%        Function: ^nativeModuleRequire node:internal/bootstrap/loaders:349:29
+      2  100.0%          Function: ~<anonymous> node:internal/modules/esm/load:1:1
+      2  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:316:27
+      1    3.8%    LazyCompile: ~supportsColor /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/@colors/colors/lib/system/supports-colors.js:58:23
+      1  100.0%      LazyCompile: ~getSupportLevel /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/@colors/colors/lib/system/supports-colors.js:142:25
+      1  100.0%        Function: ~<anonymous> /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/@colors/colors/lib/system/supports-colors.js:1:1
+      1  100.0%          Function: ^Module._compile node:internal/modules/cjs/loader:1080:37
+      1  100.0%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1135:37
+      1    3.8%    LazyCompile: ~prepareMainThreadExecution node:internal/bootstrap/pre_execution:29:36
+      1  100.0%      Function: ~<anonymous> node:internal/main/run_main_module:1:1
+      1    3.8%    LazyCompile: ~patchProcessObject node:internal/bootstrap/pre_execution:103:28
+      1  100.0%      LazyCompile: ~prepareMainThreadExecution node:internal/bootstrap/pre_execution:29:36
+      1  100.0%        Function: ~<anonymous> node:internal/main/run_main_module:1:1
+      1    3.8%    LazyCompile: ~parse /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/mongodb/lib/cmap/commands.js:222:10
+      1  100.0%      LazyCompile: ~onMessage /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/mongodb/lib/cmap/connection.js:156:14
+      1  100.0%        LazyCompile: ~<anonymous> /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/mongodb/lib/cmap/connection.js:60:44
+      1  100.0%          Function: ^emit node:events:460:44
+      1  100.0%            LazyCompile: ~processIncomingData /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/mongodb/lib/cmap/message_stream.js:84:29
+      1    3.8%    LazyCompile: ~lookupAndConnect node:net:1076:26
+      1  100.0%      LazyCompile: ~Socket.connect node:net:1018:36
+      1  100.0%        Function: ^connect node:_tls_wrap:1602:35
+      1  100.0%          LazyCompile: ~makeConnection /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/mongodb/lib/cmap/connect.js:256:24
+      1  100.0%            Function: ^connect /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/mongodb/lib/cmap/connect.js:30:17
+      1    3.8%    LazyCompile: ~json /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/express/lib/response.js:250:25
+      1  100.0%      LazyCompile: ~<anonymous> /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/dist/main.js:1:10075
+      1  100.0%        LazyCompile: ~handle /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/express/lib/router/layer.js:86:49
+      1  100.0%          LazyCompile: ~next /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/express/lib/router/route.js:116:16
+      1  100.0%            LazyCompile: ~dispatch /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/express/lib/router/route.js:98:45
+      1    3.8%    LazyCompile: ~join node:path:1166:7
+      1  100.0%      Function: ~<anonymous> /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/bcrypt/bcrypt.js:1:1
+      1  100.0%        Function: ^Module._compile node:internal/modules/cjs/loader:1080:37
+      1  100.0%          Function: ^Module._extensions..js node:internal/modules/cjs/loader:1135:37
+      1  100.0%            Function: ^Module.load node:internal/modules/cjs/loader:992:33
+      1    3.8%    LazyCompile: ~etag /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/etag/index.js:70:15
+      1  100.0%      LazyCompile: ~generateETag /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/express/lib/utils.js:273:32
+      1  100.0%        LazyCompile: ~send /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/express/lib/response.js:111:25
+      1  100.0%          LazyCompile: ~json /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/express/lib/response.js:250:25
+      1  100.0%            LazyCompile: ~<anonymous> /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/dist/main.js:1:10075
+      1    3.8%    LazyCompile: ~connect /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/mongodb/lib/sdam/server.js:97:12
+      1  100.0%      LazyCompile: ~createAndConnectServer /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/mongodb/lib/sdam/topology.js:475:32
+      1  100.0%        LazyCompile: ~<anonymous> /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/mongodb/lib/sdam/topology.js:173:57
+      1  100.0%          t node::(anonymous namespace)::BindingData::~BindingData()
+      1  100.0%            LazyCompile: ~connect /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/mongodb/lib/sdam/topology.js:154:12
+      1    3.8%    LazyCompile: ~compile /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/mongoose/lib/model.js:4974:33
+      1  100.0%      LazyCompile: ~Mongoose._model /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/mongoose/lib/index.js:581:37
+      1  100.0%        LazyCompile: ~Mongoose.model /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/mongoose/lib/index.js:510:36
+      1  100.0%          LazyCompile: ~e.default /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/dist/main.js:1:19118
+      1  100.0%            LazyCompile: ~l /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/dist/main.js:1:28478
+      1    3.8%    LazyCompile: ~check /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/aproba/index.js:14:31
+      1  100.0%      LazyCompile: ~<anonymous> /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/aproba/index.js:52:39
+      1  100.0%        t node::(anonymous namespace)::BindingData::~BindingData()
+      1  100.0%          LazyCompile: ~validate /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/aproba/index.js:25:19
+      1  100.0%            LazyCompile: ~module.exports /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/gauge/plumbing.js:6:42
+      1    3.8%    LazyCompile: ~acquire /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/mongodb/lib/sessions.js:597:12
+      1  100.0%      LazyCompile: ~get serverSession /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/mongodb/lib/sessions.js:85:22
+      1  100.0%        LazyCompile: ~applySession /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/mongodb/lib/sessions.js:661:22
+      1  100.0%          LazyCompile: ~command /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/mongodb/lib/cmap/connection.js:251:12
+      1  100.0%            LazyCompile: ~<anonymous> /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/mongodb/lib/sdam/server.js:204:42
+      1    3.8%    LazyCompile: ~_implicitHeader node:_http_server:287:68
+      1  100.0%      LazyCompile: ~end /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/compression/index.js:92:28
+      1  100.0%        LazyCompile: ~end /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/express-session/index.js:250:27
+      1  100.0%          LazyCompile: ~send /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/express/lib/response.js:111:25
+      1  100.0%            LazyCompile: ~json /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/express/lib/response.js:250:25
+      1    3.8%    LazyCompile: ~Socket._destroy node:net:728:37
+      1  100.0%      Function: ^_destroy node:internal/streams/destroy:70:18
+      1  100.0%        Function: ^destroy node:internal/streams/destroy:32:17
+      1  100.0%          LazyCompile: ~finish node:internal/streams/writable:747:16
+      1  100.0%            LazyCompile: *processTicksAndRejections node:internal/process/task_queues:68:35
+      1    3.8%    LazyCompile: ~716 /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/dist/main.js:1:10380
+      1  100.0%      Function: ^r /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/dist/main.js:1:30777
+      1  100.0%        LazyCompile: ~728 /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/dist/main.js:1:13061
+      1  100.0%          Function: ~r /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/dist/main.js:1:30777
+      1  100.0%            LazyCompile: ~965 /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/dist/main.js:1:39
+      1    3.8%    Function: ~<anonymous> node:internal/fs/rimraf:1:1
+      1  100.0%      Function: ^compileForInternalLoader node:internal/bootstrap/loaders:316:27
+      1  100.0%        Function: ^nativeModuleRequire node:internal/bootstrap/loaders:349:29
+      1  100.0%          Function: ~<anonymous> node:internal/fs/promises:1:1
+      1  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:316:27
+      1    3.8%    Function: ~<anonymous> /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/whatwg-url/lib/encoding.js:1:1
+      1  100.0%      Function: ^Module._compile node:internal/modules/cjs/loader:1080:37
+      1  100.0%        Function: ^Module._extensions..js node:internal/modules/cjs/loader:1135:37
+      1  100.0%          Function: ^Module.load node:internal/modules/cjs/loader:992:33
+      1  100.0%            Function: ^Module._load node:internal/modules/cjs/loader:771:24
+      1    3.8%    Function: ~<anonymous> /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/color/index.js:1:1
+      1  100.0%      Function: ^Module._compile node:internal/modules/cjs/loader:1080:37
+      1  100.0%        Function: ^Module._extensions..js node:internal/modules/cjs/loader:1135:37
+      1  100.0%          Function: ^Module.load node:internal/modules/cjs/loader:992:33
+      1  100.0%            Function: ^Module._load node:internal/modules/cjs/loader:771:24
+
+     20    1.1%  T _mach_port_insert_member
+
+     20    1.1%  T __kernelrpc_mach_port_move_member_trap
+      3   15.0%    t node::(anonymous namespace)::BindingData::~BindingData()
+      1   33.3%      LazyCompile: ~getStack /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/depd/index.js:381:19
+      1  100.0%        LazyCompile: ~depd /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/depd/index.js:103:15
+      1  100.0%          Function: ~<anonymous> /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/body-parser/index.js:1:1
+      1  100.0%            LazyCompile: ~Module._compile node:internal/modules/cjs/loader:1080:37
+      1   33.3%      LazyCompile: ~executeWithoutEncryptedFieldsCheck /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/mongodb/lib/operations/create_collection.js:74:39
+      1  100.0%        LazyCompile: ~<anonymous> /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/mongodb/lib/operations/create_collection.js:39:10
+      1  100.0%          LazyCompile: ~execute /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/mongodb/lib/operations/create_collection.js:38:12
+      1  100.0%            LazyCompile: ~<anonymous> /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/mongodb/lib/operations/execute_operation.js:154:61
+      1   33.3%      Function: ~<anonymous> /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/mquery/node_modules/debug/src/node.js:1:1
+      1  100.0%        Function: ^Module._compile node:internal/modules/cjs/loader:1080:37
+      1  100.0%          Function: ^Module._extensions..js node:internal/modules/cjs/loader:1135:37
+      1  100.0%            Function: ^Module.load node:internal/modules/cjs/loader:992:33
+      1    5.0%    LazyCompile: ~validate_config /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/@mapbox/node-pre-gyp/lib/util/versioning.js:195:25
+      1  100.0%      LazyCompile: ~exports.find /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/@mapbox/node-pre-gyp/lib/pre-binding.js:17:24
+      1  100.0%        Function: ~<anonymous> /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/bcrypt/bcrypt.js:1:1
+      1  100.0%          Function: ^Module._compile node:internal/modules/cjs/loader:1080:37
+      1  100.0%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1135:37
+      1    5.0%    LazyCompile: ~toRealPath node:internal/modules/cjs/loader:404:20
+      1  100.0%      LazyCompile: ~Module._findPath node:internal/modules/cjs/loader:505:28
+      1  100.0%        LazyCompile: ~resolveMainPath node:internal/modules/run_main:15:25
+      1  100.0%          LazyCompile: ~executeUserEntryPoint node:internal/modules/run_main:74:31
+      1  100.0%            Function: ~<anonymous> node:internal/main/run_main_module:1:1
+      1    5.0%    LazyCompile: ~setupPerfHooks node:internal/bootstrap/pre_execution:324:24
+      1  100.0%      LazyCompile: ~prepareMainThreadExecution node:internal/bootstrap/pre_execution:29:36
+      1  100.0%        Function: ~<anonymous> node:internal/main/run_main_module:1:1
+      1    5.0%    LazyCompile: ~setImmediate node:timers:279:22
+      1  100.0%      LazyCompile: ~log /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/winston/lib/winston/transports/console.js:44:6
+      1  100.0%        LazyCompile: ~_write /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/winston-transport/index.js:69:51
+      1  100.0%          LazyCompile: ~doWrite /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/readable-stream/lib/_stream_writable.js:404:17
+      1  100.0%            LazyCompile: ~writeOrBuffer /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/readable-stream/lib/_stream_writable.js:363:23
+      1    5.0%    LazyCompile: ~resolve node:path:1091:10
+      1  100.0%      LazyCompile: ~patchProcessObject node:internal/bootstrap/pre_execution:103:28
+      1  100.0%        LazyCompile: ~prepareMainThreadExecution node:internal/bootstrap/pre_execution:29:36
+      1  100.0%          Function: ~<anonymous> node:internal/main/run_main_module:1:1
+      1    5.0%    LazyCompile: ~realpathSync node:fs:2460:22
+      1  100.0%      LazyCompile: ~toRealPath node:internal/modules/cjs/loader:404:20
+      1  100.0%        LazyCompile: ~Module._findPath node:internal/modules/cjs/loader:505:28
+      1  100.0%          LazyCompile: ~resolveMainPath node:internal/modules/run_main:15:25
+      1  100.0%            LazyCompile: ~executeUserEntryPoint node:internal/modules/run_main:74:31
+      1    5.0%    LazyCompile: ~query node:dns:289:17
+      1  100.0%      LazyCompile: ~resolveSRVRecord /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/mongodb/lib/connection_string.js:45:26
+      1  100.0%        LazyCompile: ~connect /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/mongodb/lib/operations/connect.js:8:17
+      1  100.0%          LazyCompile: ~<anonymous> /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/mongodb/lib/mongo_client.js:134:52
+      1  100.0%            LazyCompile: ~maybePromise /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/mongodb/lib/utils.js:345:22
+      1    5.0%    LazyCompile: ~prepareMainThreadExecution node:internal/bootstrap/pre_execution:29:36
+      1  100.0%      Function: ~<anonymous> node:internal/main/run_main_module:1:1
+      1    5.0%    LazyCompile: ~patchProcessObject node:internal/bootstrap/pre_execution:103:28
+      1  100.0%      LazyCompile: ~prepareMainThreadExecution node:internal/bootstrap/pre_execution:29:36
+      1  100.0%        Function: ~<anonymous> node:internal/main/run_main_module:1:1
+      1    5.0%    LazyCompile: ~nextTick node:internal/process/task_queues:104:18
+      1  100.0%      LazyCompile: ~resume /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/readable-stream/lib/_stream_readable.js:902:16
+      1  100.0%        LazyCompile: ~Readable.resume /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/readable-stream/lib/_stream_readable.js:886:38
+      1  100.0%          LazyCompile: ~Readable.on /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/readable-stream/lib/_stream_readable.js:804:34
+      1  100.0%            LazyCompile: ~Readable.pipe /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/readable-stream/lib/_stream_readable.js:608:36
+      1    5.0%    LazyCompile: ~createWritableStdioStream node:internal/bootstrap/switches/is_main_thread:45:35
+      1  100.0%      LazyCompile: ~getStderr node:internal/bootstrap/switches/is_main_thread:168:19
+      1  100.0%        Function: ~<anonymous> /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/debug/src/node.js:1:1
+      1  100.0%          LazyCompile: ~Module._compile node:internal/modules/cjs/loader:1080:37
+      1  100.0%            LazyCompile: ~Module._extensions..js node:internal/modules/cjs/loader:1135:37
+      1    5.0%    LazyCompile: ~add /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/mongoose/lib/schema.js:553:36
+      1  100.0%      LazyCompile: ~Schema /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/mongoose/lib/schema.js:96:16
+      1  100.0%        LazyCompile: ~42 /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/dist/main.js:1:26673
+      1  100.0%          Function: ~r /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/dist/main.js:1:30777
+      1  100.0%            LazyCompile: ~999 /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/dist/main.js:1:29437
+      1    5.0%    LazyCompile: ~Readable.removeAllListeners node:internal/streams/readable:922:49
+      1  100.0%      LazyCompile: ~<anonymous> /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/mongodb/lib/cmap/connect.js:314:37
+      1  100.0%        t node::(anonymous namespace)::BindingData::~BindingData()
+      1  100.0%          LazyCompile: ~connectHandler /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/mongodb/lib/cmap/connect.js:313:28
+      1  100.0%            Function: ^onceWrapper node:events:622:21
+      1    5.0%    Function: ~<anonymous> node:internal/main/run_main_module:1:1
+      1    5.0%    Function: ~<anonymous> /Users/lucadardenne/Desktop/luca/dev/coderhouse/programacion-backend/32-logs2/coder_proyecto-final/node_modules/uuid/dist/version.js:1:1
+      1  100.0%      Function: ^Module._compile node:internal/modules/cjs/loader:1080:37
+      1  100.0%        Function: ^Module._extensions..js node:internal/modules/cjs/loader:1135:37
+      1  100.0%          Function: ^Module.load node:internal/modules/cjs/loader:992:33
+      1  100.0%            Function: ^Module._load node:internal/modules/cjs/loader:771:24
+
