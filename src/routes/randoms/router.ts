@@ -29,14 +29,15 @@ router.get('/', (req, res) => {
   logger.petition(req)
   let cant: number = req.query.cant ? +req.query.cant : 100000000
 
-  if (argumentsObject.mode === 'cluster') res.json(calculate(cant))
-  else {
-    const randoms = fork(
-      path.resolve(__dirname, '../src/routes/randoms/calculate.js')
-    )
-    randoms.on('message', (data) => {
-      if (data === 'ready') randoms.send(cant)
-      else res.json(data)
-    })
-  }
+  // if (argumentsObject.mode === 'cluster')
+  res.json(calculate(cant))
+  // else {
+  //   const randoms = fork(
+  //     path.resolve(__dirname, '../src/routes/randoms/calculate.js')
+  //   )
+  //   randoms.on('message', (data) => {
+  //     if (data === 'ready') randoms.send(cant)
+  //     else res.json(data)
+  //   })
+  // }
 })
