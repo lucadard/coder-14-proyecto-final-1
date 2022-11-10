@@ -9,7 +9,7 @@ export const router = Router()
 
 router.get('/', (req, res) => {
   logger.petition(req)
-  res.json({
+  const info = {
     args: argumentsObject,
     os: process.platform,
     execPath: process.execPath,
@@ -18,5 +18,9 @@ router.get('/', (req, res) => {
     nodeVersion: process.versions.node,
     reservedMemory: process.memoryUsage().rss,
     processors: os.cpus().length
-  })
+  }
+
+  // console.log(info)
+
+  res.json(info)
 })
