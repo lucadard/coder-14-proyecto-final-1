@@ -3,6 +3,7 @@ declare global {
     interface ProcessEnv {
       PORT?: string
       FIREBASE_CREDENTIALS?: any
+      MONGO_PASSWORD?: string
       SELECTED_DAO: 'archivo' | 'memoria' | 'mongodb' | 'firebase'
       NODE_ENV: 'production' | 'development'
     }
