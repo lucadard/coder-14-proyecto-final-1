@@ -4,11 +4,13 @@ import { createServer } from './src/server'
 import { argumentsObject } from './src/config/args'
 import { logger } from './src/config/logger'
 
+const PRIMARY_PORT = +process.env.PORT! || argumentsObject.port || 8080
+
 async function initializeServer() {
-  const PORT =
-    argumentsObject.mode === 'fork' ? argumentsObject.port : +process.env.PORT!
   try {
-    const server = await createServer(PORT)
+    const server = await createServer(
+      cluster.isPrimary ? PRIMARY_PORT : +process.env.SECONDARY_PORT!
+    )
     logger.info(
       `Server pid: ${process.pid}: Listening on port ${server.address().port}`
     )
@@ -24,14 +26,15 @@ if (cluster.isPrimary) {
 
   if (argumentsObject.mode === 'cluster') {
     for (let i = 0; i < argumentsObject.i; i++) {
-      const PORT =
-        i === 0 ? argumentsObject.port + i : argumentsObject.port + i + 1
-      cluster.fork({ PORT })
+      const SECONDARY_PORT = i === 0 ? PRIMARY_PORT + i : PRIMARY_PORT + i + 1
+      cluster.fork({ SECONDARY_PORT })
     }
   } else initializeServer()
 
   cluster.on('exit', (worker) => {
     logger.error(`Worker pid: ${worker.process.pid}. Died`)
-    cluster.fork({ PORT: argumentsObject.port + worker.id - 1 })
+    cluster.fork({
+      PORT: PRIMARY_PORT + worker.id - 1
+    })
   })
 } else initializeServer()
