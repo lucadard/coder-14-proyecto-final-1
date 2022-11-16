@@ -1,7 +1,7 @@
 import parseArgs from 'minimist'
 
 type arguments = {
-  port: number
+  port: number | undefined
   mode: 'cluster' | 'fork'
   i: number
 }
@@ -9,7 +9,7 @@ type arguments = {
 const argumentsObject = parseArgs<arguments>(process.argv.slice(2))
 
 if (!argumentsObject.port || isNaN(argumentsObject.port))
-  argumentsObject.port = 8080
+  argumentsObject.port = undefined
 
 if (!argumentsObject.i || isNaN(argumentsObject.i)) argumentsObject.i = 5
 else {
