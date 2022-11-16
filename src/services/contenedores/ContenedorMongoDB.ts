@@ -1,15 +1,27 @@
 import mongoose, { Schema, Types } from 'mongoose'
+import { logger } from '../../config/logger'
 
 import config from '../config'
 import { generateId } from '../lib/generateId'
 
 export default class ContenedorMongoDB<T> {
+  protected collectionName
   protected collection
   constructor(collectionName: string, schema: Schema<T>) {
     this.collection = mongoose.model(collectionName, schema)
+    this.collectionName = collectionName
     this.connect()
   }
   connect = async () => {
+    mongoose.connection.on('connected', () =>
+      logger.info(`Mongodb: ${this.collectionName} collection connected`)
+    )
+    mongoose.connection.on('error', (err) =>
+      logger.error(
+        `Mongodb: Could not connect to ${this.collectionName} collection`
+      )
+    )
+
     return await mongoose.connect(config.mongodb.url, config.mongodb.options)
   }
 
