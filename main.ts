@@ -10,7 +10,7 @@ async function initializeServer() {
   try {
     const server = await createServer(PORT)
     logger.info(
-      `Worker ${cluster.worker?.id}, pid: ${process.pid}: Listening on port ${
+      `Server pid: ${process.pid}: Listening on port ${
         server.address().port
       }`
     )
@@ -32,7 +32,7 @@ if (cluster.isPrimary) {
   } else initializeServer()
 
   cluster.on('exit', (worker) => {
-    logger.error(`Worker ${worker.id || 0}, pid: ${worker.process.pid}. Died`)
+    logger.error(`Worker pid: ${worker.process.pid}. Died`)
     cluster.fork({ PORT: argumentsObject.port + worker.id - 1 })
   })
 } else initializeServer()
