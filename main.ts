@@ -10,9 +10,7 @@ async function initializeServer() {
   try {
     const server = await createServer(PORT)
     logger.info(
-      `Server pid: ${process.pid}: Listening on port ${
-        server.address().port
-      }`
+      `Server pid: ${process.pid}: Listening on port ${server.address().port}`
     )
   } catch (err) {
     logger.error('Server error', err)
@@ -21,6 +19,7 @@ async function initializeServer() {
 
 if (cluster.isPrimary) {
   logger.info(`Program starting...`)
+  logger.info(`Running in ${process.env.NODE_ENV}.`)
   logger.info(`Running in ${argumentsObject.mode} mode.`)
 
   if (argumentsObject.mode === 'cluster') {
