@@ -4,6 +4,7 @@ declare global {
       PORT?: string
       FIREBASE_CREDENTIALS?: any
       SELECTED_DAO: 'archivo' | 'memoria' | 'mongodb' | 'firebase'
+      NODE_ENV: 'production' | 'development'
     }
   }
   namespace Express {
