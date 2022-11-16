@@ -1,8 +1,9 @@
 import session from 'express-session'
-
 import MongoStore from 'connect-mongo'
-import * as dotenv from 'dotenv'
-dotenv.config()
+
+import dotenv from 'dotenv'
+if (process.env.NODE_ENV !== 'production') dotenv.config()
+
 const MONGO_URL = `mongodb+srv://lucadard:${process.env.MONGO_PASSWORD}@4coderhouse.hyrwj4z.mongodb.net`
 const mongoStore = MongoStore.create({
   mongoUrl: MONGO_URL,

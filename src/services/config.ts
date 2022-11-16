@@ -1,5 +1,5 @@
-import * as dotenv from 'dotenv'
-dotenv.config()
+import dotenv from 'dotenv'
+if (process.env.NODE_ENV !== 'production') dotenv.config()
 
 const MONGO_PASSWORD = process.env.MONGO_PASSWORD
 
