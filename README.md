@@ -1,6 +1,6 @@
-## Usage
+# Usage
 
-### Important
+## Important!
 
 For the server to correctly work, you must set the following environment variables:
 
@@ -8,6 +8,10 @@ For the server to correctly work, you must set the following environment variabl
 - `TWILIO_AUTH_TOKEN` and `TWILIO_ACCOUNT_SID` to send sms via Twilio
 - `ADMIN_PHONE` and `ADMIN_EMAIL` to receive notifications
 - `GOOGLE_MAIL` and `GOOGLE_MAIL_PASSWORD` to send emails via Gmail
+
+### Development mode
+You can run it with ts-node running the `npm run dev` command and setting the environment variables in a .env file
+### Production mode
 
 Build the project:
 
