@@ -1,6 +1,6 @@
 import { Router } from 'express'
 
-import { productDAO } from '../../server'
+import { productDAO } from '../../services'
 
 // import { hasAllProps, hasAnyProps } from './lib/validation'
 import { authorization } from '../../middlewares/authorization'
@@ -27,7 +27,7 @@ router.get('/add', adminAuthorization, async (req, res) => {
 router.get('/update', adminAuthorization, async (req, res) => {
   logger.petition(req)
   let { id } = req.query
-  const product: Product = await productDAO.findById(id)
+  const product: Product = await productDAO.findById(id as string)
   return res.render('edit-product', {
     user: req.user,
     product,

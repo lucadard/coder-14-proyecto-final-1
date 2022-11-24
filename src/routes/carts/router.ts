@@ -3,7 +3,7 @@ import { logger } from '../../config/logger'
 import { adminAuthorization } from '../../middlewares/adminAuthorization'
 import { authorization } from '../../middlewares/authorization'
 
-import { cartDAO, productDAO } from '../../server'
+import { cartDAO, productDAO } from '../../services'
 
 export const router = Router()
 
