@@ -1,5 +1,14 @@
 ## Usage
 
+### Important
+
+For the server to correctly work, you must set the following environment variables:
+
+- `MONGO_URL` to connect to Mongodb
+- `TWILIO_AUTH_TOKEN` and `TWILIO_ACCOUNT_SID` to send sms via Twilio
+- `ADMIN_PHONE` and `ADMIN_EMAIL` to receive notifications
+- `GOOGLE_MAIL` and `GOOGLE_MAIL_PASSWORD` to send emails via Gmail
+
 Build the project:
 
     npm run build
