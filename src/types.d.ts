@@ -1,11 +1,14 @@
 declare global {
   namespace NodeJS {
     interface ProcessEnv {
-      PORT?: string
-      FIREBASE_CREDENTIALS?: any
-      MONGO_PASSWORD?: string
-      SELECTED_DAO: 'archivo' | 'memoria' | 'mongodb' | 'firebase'
       NODE_ENV: 'production' | 'development'
+      MONGO_URL: string
+      TWILIO_AUTH_TOKEN: string
+      TWILIO_ACCOUNT_SID: string
+      ADMIN_PHONE: string
+      ADMIN_EMAIL: string
+      GOOGLE_MAIL: string
+      GOOGLE_MAIL_PASSWORD: string
     }
   }
   namespace Express {
@@ -17,8 +20,13 @@ declare global {
 
 export type User = {
   id: String
-  username: string
+  email: body.email
   password: string
+  username: string
+  address: string
+  age: number
+  phone: string
+  avatar: string
   admin: boolean
 }
 export type Product = {
