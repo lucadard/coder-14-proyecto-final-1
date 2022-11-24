@@ -1,0 +1,21 @@
+section.info {
+  max-width: 800px;
+  background-color: lightgray;
+  margin: 0 auto;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+section.info > img {
+  height: 64px;
+  min-width: 64px;
+  border-radius: 100%;
+}
+
+p.username {
+    font-weight: bold;
+    font-size: 1.3rem;
+}

@@ -183,3 +183,54 @@ a {
 #errorMsg.show {
   display: block;
 }
+
+#popup {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  place-content: center;
+  z-index: 100;
+  background-color: rgba(0, 0, 0, 0.3);
+  transition: opacity 300ms ease-in-out;
+}
+#popup.hide {
+  opacity: 0;
+  pointer-events: none;
+}
+
+#popup .popupMessage {
+  padding: 2rem 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  border-radius: 0.5rem;
+}
+.popupMessage .btnGroup {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem;
+  font-size: 18px;
+}
+
+.btnGroup button {
+  padding: 0.5rem 1rem;
+  color: white;
+  background-color: rgb(90, 145, 247);
+  border: none;
+  border-radius: 0.2rem;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+  min-height: 2rem;
+  cursor: pointer;
+}
+
+button.noBg {
+  background: transparent;
+  box-shadow: none;
+  cursor: default;
+}
