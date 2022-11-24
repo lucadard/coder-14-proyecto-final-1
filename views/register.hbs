@@ -1,14 +1,47 @@
 <link rel='stylesheet' href='/static/styles/login.css' />
+
 <main>
   <section>
-    <form action='/auth/register' method='post'>
+    <form
+      action='/auth/register'
+      method='post'
+      id='form'
+      enctype='multipart/form-data'
+    >
       <h1>Registro</h1>
       <div class='input-group'>
-        <input type='text' name='username' placeholder='Nombre de usuario' />
-        <input type='password' name='password' placeholder='Contraseña' />
+        <input type='text' name='email' placeholder='Correo electrónico*' />
+        <input type='password' name='password' placeholder='Contraseña*' />
+        <input type='text' name='username' placeholder='Nombre de usuario*' />
+        <input type='text' name='address' placeholder='Dirección*' />
+        <input
+          type='number'
+          name='age'
+          min='14'
+          max='99'
+          step='1'
+          placeholder='Edad*'
+        />
+        <label for='phone'>Número de teléfono*</label>
+        <div id='phoneGroup'>
+          <select name='phoneCountry'>
+            <option value='AR' selected>AR</option>
+            <option value='US'>US</option>
+          </select>
+          <input
+            style='width: 100%'
+            type='tel'
+            name='phone'
+            id='phone'
+            placeholder='(11) 1234-5678'
+          />
+        </div>
+        <label for='avatar'>Subí una foto! (opcional)</label>
+        <input type='file' name='avatar' />
         {{#if msg}}
           <span class='error-msg'>{{msg}}</span>
         {{/if}}
+        <div class='alert alert-info' style='display: none;'></div>
       </div>
       <button>Continuar</button>
       <a class='login-btn' href='/auth/login'>Inicia sesion</a>
