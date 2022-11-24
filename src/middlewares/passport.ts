@@ -30,7 +30,7 @@ const localRegisterStrategy = new LocalStrategy(
         age: body.age,
         phone,
         avatar: file
-          ? `/static/avatar/${file.filename}`
+          ? `/static/img/${file.filename}`
           : '/static/img/default_pfp.jpeg'
       }
       const newUser = await userDAO.register(user)

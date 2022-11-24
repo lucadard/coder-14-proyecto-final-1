@@ -5,7 +5,7 @@ const relativePath = process.env.NODE_ENV === 'production' ? '..' : '../../'
 
 const storage = multer.diskStorage({
   destination: function (_req, _file, cb) {
-    cb(null, path.join(__dirname, `${relativePath}/public/avatar`))
+    cb(null, path.join(__dirname, `${relativePath}/public/img`))
   },
   filename: function ({ body }, file, cb) {
     cb(
