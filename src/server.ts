@@ -1,10 +1,8 @@
 import express from 'express'
 import compression from 'compression'
 
-import { exportedDAOs } from './services'
-export const { cartDAO, productDAO } = exportedDAOs(
-  process.env.SELECTED_DAO || 'mongodb'
-)
+import { productDAO } from './services'
+
 import { sessionHandler } from './middlewares/session'
 import {
   passportMiddleware,
@@ -13,9 +11,9 @@ import {
 
 import { router as productsRouter } from './routes/products/router'
 import { router as cartsRouter } from './routes/carts/router'
-import { router as randomsRouter } from './routes/randoms/router'
+import { router as purchaseRouter } from './routes/purchase/router'
 import { router as authRouter } from './routes/auth/router'
-import { router as infoRouter } from './routes/info/router'
+import { router as userRouter } from './routes/user/router'
 
 import { hbsConfig } from './config/engine'
 import { logger } from './config/logger'
@@ -41,9 +39,10 @@ app.get('/', async (req, res) => {
 
 app.use('/api/products', productsRouter)
 app.use('/api/carts', cartsRouter)
-app.use('/api/randoms', randomsRouter)
+app.use('/api/purchase', purchaseRouter)
+
 app.use('/auth', authRouter)
-app.use('/info', infoRouter)
+app.use('/myprofile', userRouter)
 
 app.get('*', (req, res) => {
   logger.petition(req, 'warn')
