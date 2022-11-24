@@ -1,3 +1,5 @@
+# Preview
+Until November 28th, 2022 you can preview this app hosted on heroku [here](https://forcoderhouse.herokuapp.com/)
 # Usage
 
 ## Important!
