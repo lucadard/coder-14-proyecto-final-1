@@ -6,8 +6,10 @@
     </div>
     <div class='user'>
       {{#if user.username}}
-        <span>{{user.username}}</span>
-        <a href='/api/carts'>Carrito{{#if user.cartAmount}}({{user.cartAmount}}){{/if}}</a>
+        <a href='/myprofile'>{{user.username}}</a>
+        <a href='/api/carts'>Carrito{{#if
+            user.cartAmount
+          }}({{user.cartAmount}}){{/if}}</a>
         <a href='/auth/logout'>Salir</a>
       {{else}}
         <a href='/auth/login'>Ingresá</a><br />
