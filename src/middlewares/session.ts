@@ -4,7 +4,7 @@ import MongoStore from 'connect-mongo'
 import dotenv from 'dotenv'
 if (process.env.NODE_ENV !== 'production') dotenv.config()
 
-const MONGO_URL = `mongodb+srv://lucadard:${process.env.MONGO_PASSWORD}@4coderhouse.hyrwj4z.mongodb.net`
+const MONGO_URL = process.env.MONGO_URL
 const mongoStore = MongoStore.create({
   mongoUrl: MONGO_URL,
   ttl: 10 * 60 // 10 min
