@@ -1,0 +1,21 @@
+<link rel='stylesheet' href='/static/styles/profile.css' />
+
+{{>navbar}}
+<main>
+  <section class="info">
+    <img id='pfp' src={{user.avatar}} alt="foto de perfil">
+    <div>
+      <p class="username">{{user.username}}</p>
+      <p>{{user.email}}</p>
+      <p>{{user.phone}}</p>
+    </div>
+  </section>
+  <script>
+    //managing non existing profile picture
+    const image = document.getElementById('pfp');
+    image.onerror = () => {
+      console.error('Error loading profile picture, using default instead.');
+      image.src= '/static/img/default_pfp.jpeg'
+    };
+  </script>
+</main>
