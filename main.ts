@@ -21,7 +21,9 @@ async function initializeServer() {
 
 if (cluster.isPrimary) {
   logger.info(`Program starting...`)
-  logger.info(`Running in ${process.env.NODE_ENV}.`)
+  logger.info(
+    `Running in ${process.env.NODE_ENV ? process.env.NODE_ENV : 'development'}.`
+  )
   logger.info(`Running in ${argumentsObject.mode} mode.`)
 
   if (argumentsObject.mode === 'cluster') {
