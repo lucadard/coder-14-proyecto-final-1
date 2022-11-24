@@ -1,7 +1,7 @@
 import multer from 'multer'
 import path from 'path'
 
-const relativePath = process.env.NODE_ENV === 'production' ? '..' : '../../..'
+const relativePath = process.env.NODE_ENV === 'production' ? '..' : '../../'
 
 const storage = multer.diskStorage({
   destination: function (_req, _file, cb) {
