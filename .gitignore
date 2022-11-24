@@ -3,4 +3,3 @@ dist
 logs
 .env
 .DS_STORE
-public/avatar
