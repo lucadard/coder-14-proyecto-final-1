@@ -1,19 +1,13 @@
 import dotenv from 'dotenv'
 if (process.env.NODE_ENV !== 'production') dotenv.config()
 
-const MONGO_PASSWORD = process.env.MONGO_PASSWORD
-
-const serviceAccount = process.env.FIREBASE_CREDENTIALS
+const MONGO_URL = process.env.MONGO_URL
 
 export default {
-  fileSys: {
-    path: './files'
-  },
   mongodb: {
-    url: `mongodb+srv://lucadard:${MONGO_PASSWORD}@4coderhouse.hyrwj4z.mongodb.net`,
+    url: MONGO_URL,
     options: {
       retryWrites: true
     }
-  },
-  firebase: serviceAccount
+  }
 }
