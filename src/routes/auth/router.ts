@@ -1,5 +1,8 @@
 import { Router } from 'express'
 import passport from 'passport'
+
+import { uploadAvatar } from '../../config/multer'
+
 import { logger } from '../../config/logger'
 
 export const router = Router()
@@ -40,6 +43,7 @@ router.get('/register', (req, res) => {
 
 router.post(
   '/register',
+  uploadAvatar,
   passport.authenticate('register', {
     successRedirect: '/auth/register/success',
     failureRedirect: '/auth/register/fail'
