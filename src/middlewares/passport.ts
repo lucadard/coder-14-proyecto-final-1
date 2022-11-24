@@ -1,16 +1,43 @@
 import passport from 'passport'
 import { Strategy as LocalStrategy } from 'passport-local'
+
 import { logger } from '../config/logger'
-import { cartDAO } from '../server'
+import { sendEmail } from '../routes/purchase/lib'
+import { cartDAO } from '../services'
 import { userDAO } from '../services'
+
+import dotenv from 'dotenv'
+if (process.env.NODE_ENV !== 'production') dotenv.config()
+
+import {
+  validatePhoneNumber,
+  validateEmail,
+  validateAddress
+} from './lib/validation'
 
 const localRegisterStrategy = new LocalStrategy(
   {
     passReqToCallback: true
   },
-  async (_req, username, password, done) => {
+  async ({ body, file }, username, password, done) => {
     try {
-      const newUser = await userDAO.register({ username, password })
+      const phone = validatePhoneNumber(body.phone, body.phoneCountry)
+      const user = {
+        email: validateEmail(body.email),
+        password,
+        username,
+        address: validateAddress(body.address),
+        age: body.age,
+        phone,
+        avatar: file
+          ? `/static/img/${file.filename}`
+          : '/static/img/default_pfp.jpeg'
+      }
+      const newUser = await userDAO.register(user)
+      sendEmail('lucadardenne@hotmail.com', {
+        subject: `Nuevo registro`,
+        html: `Email: ${body.email}\nUsername: ${username}\nAddress: ${body.address}\nAge: ${body.age}\nPhone: ${phone}`
+      })
       done(null, newUser)
     } catch (err: any) {
       logger.error(`Error while register. ${err}`)
@@ -43,13 +70,8 @@ passport.serializeUser((user: any, done) => {
 passport.deserializeUser(async (username: string, done) => {
   try {
     const user = await userDAO.findByUsername(username)
-    const cart = await cartDAO.findByUserId(user!.id)
-    done(null, {
-      id: user!.id,
-      username: user!.username,
-      cartAmount: cart!.products.length,
-      admin: user!.admin
-    })
+    // const cart = await cartDAO.findByUserId(user!.id as string)
+    done(null, user)
   } catch (err) {
     done(err)
   }
