@@ -37,8 +37,20 @@
         {{/if}}
         </ul>
         {{#if cartProducts.length}}
+        <div>
             <p class="price">Total: ${{price}}<span id="price"></span></p>
             <button onclick=emptyCart('{{user.id}}')>Vaciar carrito</button>
+            <button onclick=togglePopup()>Continuar compra</button>
+        </div>
         {{/if}}
+        <div id="popup" class="hide">
+            <div class="popupMessage">
+                <p id="purchaseInfo">Estas seguro?</p>
+                <div class="btnGroup">
+                    <button id='closeBtn' onclick=togglePopup()>No</button>
+                    <button id='purchaseBtn' onclick=purchase('{{user.id}}')>Si!</button>
+                </div>
+            </div>
+        </div>
     </section>
 </main>
