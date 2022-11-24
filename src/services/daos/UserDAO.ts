@@ -16,8 +16,13 @@ function createHash(password: string) {
 
 const userSchema = new Schema<User>({
   id: { type: String, required: true },
+  email: { type: String, required: true },
   username: { type: String, required: true },
   password: { type: String, required: true },
+  address: { type: String, required: true },
+  age: { type: Number, required: true },
+  phone: { type: String, required: true },
+  avatar: { type: String, required: true },
   admin: { type: Boolean, required: true }
 })
 
@@ -26,14 +31,19 @@ export default class UserDAO extends ContenedorMongoDB<User> {
     super('users', userSchema)
   }
 
-  register = async ({ username, password }: any) => {
-    if (await this.findByUsername(username))
+  register = async (user: Omit<User, 'id' | 'admin'>) => {
+    if (await this.findByUsername(user.username))
       throw new Error('User already exists')
     const newUser = new this.collection<User>({
       id: generateId(),
-      admin: false,
-      username,
-      password: createHash(password)
+      email: user.email,
+      username: user.username,
+      password: createHash(user.password),
+      address: user.address,
+      age: user.age,
+      phone: user.phone,
+      avatar: user.avatar,
+      admin: false
     })
     try {
       await newUser.save()
